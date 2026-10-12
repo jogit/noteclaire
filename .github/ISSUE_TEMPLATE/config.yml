@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question ou retour d'expérience
+    url: https://github.com/jogit/noteclaire/discussions
+    about: Pour une question d'usage ou raconter comment ça s'est passé, les discussions sont plus adaptées qu'une issue.
+  - name: Faille de sécurité
+    url: https://github.com/jogit/noteclaire/security/advisories/new
+    about: Ne pas ouvrir d'issue publique : signalement privé.

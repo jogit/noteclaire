@@ -1,0 +1,39 @@
+name: Problème d'installation ou d'utilisation
+description: Le script d'installation échoue, l'application ne démarre pas ou se comporte mal.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de prendre le temps de décrire le problème. **Ne collez jamais** votre clé OpenAI ni votre mot de passe.
+  - type: dropdown
+    id: systeme
+    attributes:
+      label: Système
+      options: [Windows, macOS, Linux, Autre]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version de NoteClaire
+      description: Réglages → Avancé, tout en bas (ou « docker compose images »).
+      placeholder: 0.1.0-beta.1
+  - type: dropdown
+    id: ia
+    attributes:
+      label: IA utilisée
+      options: [Clé OpenAI, Abonnement ChatGPT, IA locale (Ollama, LM Studio), Essai sans IA, Je ne sais pas]
+  - type: textarea
+    id: quoi
+    attributes:
+      label: Ce qui se passe
+      description: Ce que vous avez fait, ce que vous attendiez, ce que vous avez obtenu.
+    validations:
+      required: true
+  - type: textarea
+    id: erreur
+    attributes:
+      label: Message d'erreur ou journal
+      description: Le texte affiché, ou la fin de `docker compose logs` dans le dossier d'installation.
+      render: text

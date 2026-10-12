@@ -1,0 +1,16 @@
+name: Idée ou amélioration
+description: Une fonction qui manque, quelque chose qui pourrait être plus simple.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: besoin
+    attributes:
+      label: Le besoin
+      description: Dans quelle situation (élève, parent, enseignant) et qu'est-ce qui coince aujourd'hui ?
+    validations:
+      required: true
+  - type: textarea
+    id: idee
+    attributes:
+      label: Ce qui aiderait
+      description: Votre idée, même sommaire. Les pistes déjà envisagées sont dans ROADMAP.md.
