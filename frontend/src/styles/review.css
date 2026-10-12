@@ -1,0 +1,210 @@
+/* --- Suggestions --------------------------------------------------------------------------- */
+
+.suggestion {
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  margin-top: 1rem;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.suggestion.correction,
+.suggestion.warning {
+  border-left-color: var(--warning);
+}
+
+.suggestion h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.suggestion-label {
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0.35rem 1rem;
+  border-left: 4px solid var(--border-strong);
+  background: var(--surface-2);
+  border-radius: 8px;
+}
+
+blockquote.proposed {
+  border-left-color: var(--primary);
+}
+
+blockquote .markdown > :first-child {
+  margin-top: 0.25rem;
+}
+
+blockquote .markdown > :last-child {
+  margin-bottom: 0.25rem;
+}
+
+.occurrences {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.occurrence {
+  justify-content: flex-start;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.snippet mark,
+.occurrence mark {
+  background: var(--warning-soft);
+  color: var(--warning);
+  font-weight: 600;
+  text-decoration: underline;
+  border-radius: 4px;
+}
+
+.copy-text {
+  white-space: pre-wrap;
+  background: var(--surface);
+  padding: 0.75rem;
+  border-radius: 8px;
+  user-select: all;
+}
+
+.source {
+  font-weight: 600;
+}
+
+/* --- Réviser : fiche et quiz ---------------------------------------------------------------- */
+
+.sheet {
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+}
+
+.quiz-header {
+  margin-top: 2rem;
+}
+
+.quiz-question {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.quiz-choices {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.quiz-choice {
+  justify-content: space-between;
+  text-align: left;
+  gap: 1rem;
+}
+
+.quiz-choice .markdown > * {
+  margin: 0;
+}
+
+.quiz-choice:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.quiz-choice.right {
+  border-color: var(--success);
+  background: var(--success-soft);
+}
+
+.quiz-choice.wrong {
+  border-color: var(--error);
+  background: var(--error-soft);
+}
+
+.badge {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.quiz-short {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.quiz-feedback {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.quiz-verdict,
+.quiz-score {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* --- Listes diverses ----------------------------------------------------------------------- */
+
+.chapter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.chapter-list a {
+  display: block;
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.chapter-subject {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.search-results .snippet {
+  display: block;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.item-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.model-choice {
+  margin: 1rem 0;
+}
+
+.model-choice select {
+  flex: 1 1 14rem;
+}

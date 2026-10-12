@@ -1,0 +1,59 @@
+name: Installation
+
+# Vérifie que les scripts d'installation fonctionnent : Linux (installation complète avec Docker)
+# et Windows (analyse du script PowerShell : Docker y exécute des conteneurs Windows, pas Linux).
+on:
+  push:
+    branches: [main]
+    paths: ["scripts/**", "docker-compose.yml", "backend/Dockerfile", "frontend/Dockerfile", ".github/workflows/install.yml"]
+  pull_request:
+    paths: ["scripts/**", "docker-compose.yml", ".github/workflows/install.yml"]
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: shellcheck -S error scripts/install.sh
+      - name: Construire les images (comme si elles étaient déjà publiées)
+        run: APP_PASSWORD=ci docker compose build
+      - name: Installer
+        run: |
+          NOTECLAIRE_DIR="$RUNNER_TEMP/noteclaire" NOTECLAIRE_COMPOSE="$PWD/docker-compose.yml" NOTECLAIRE_CHATGPT=non sh scripts/install.sh < /dev/null
+      - name: Vérifier l'application
+        run: |
+          cd "$RUNNER_TEMP/noteclaire"
+          password="$(sed -n 's/^APP_PASSWORD=//p' .env)"
+          test -n "$password"
+          test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8080/api/subjects)" = 401
+          curl -fs -c jar -H 'Content-Type: application/json' -d "{\"password\":\"$password\"}" localhost:8080/api/auth/login
+          curl -fs -b jar localhost:8080/api/setup/status | grep -q needs_setup
+      - name: Mise à jour (le .env est conservé)
+        run: |
+          before="$(cat "$RUNNER_TEMP/noteclaire/.env")"
+          NOTECLAIRE_DIR="$RUNNER_TEMP/noteclaire" NOTECLAIRE_COMPOSE="$PWD/docker-compose.yml" NOTECLAIRE_CHATGPT=non sh scripts/install.sh < /dev/null
+          test "$before" = "$(cat "$RUNNER_TEMP/noteclaire/.env")"
+      - name: Échec de téléchargement sans casser l'installation existante
+        run: |
+          cp "$RUNNER_TEMP/noteclaire/docker-compose.yml" "$RUNNER_TEMP/compose-before.yml"
+          if NOTECLAIRE_DIR="$RUNNER_TEMP/noteclaire" NOTECLAIRE_RAW=http://127.0.0.1:1 sh scripts/install.sh < /dev/null; then
+            echo "Le téléchargement aurait dû échouer" >&2
+            exit 1
+          fi
+          cmp "$RUNNER_TEMP/compose-before.yml" "$RUNNER_TEMP/noteclaire/docker-compose.yml"
+      - if: failure()
+        run: cd "$RUNNER_TEMP/noteclaire" && docker compose logs
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Analyser install.ps1
+        shell: pwsh
+        run: |
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile("$PWD/scripts/install.ps1", [ref]$null, [ref]$errors) | Out-Null
+          if ($errors) { $errors | ForEach-Object { Write-Error $_.Message }; exit 1 }
+          Install-Module PSScriptAnalyzer -Force -Scope CurrentUser
+          $found = Invoke-ScriptAnalyzer -Path scripts/install.ps1 -Severity Error
+          if ($found) { $found | Format-List; exit 1 }

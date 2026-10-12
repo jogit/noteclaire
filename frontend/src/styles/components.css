@@ -1,0 +1,323 @@
+/* --- Boutons -------------------------------------------------------------------------- */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button,
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    transform 0.05s;
+}
+
+button:hover:not(:disabled),
+.button-link:hover {
+  background: var(--surface-2);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+button.primary,
+.button-link.primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-text);
+  font-weight: 600;
+}
+
+button.primary:hover:not(:disabled),
+.button-link.primary:hover {
+  background: var(--primary-hover);
+}
+
+button.secondary,
+.button-link.secondary {
+  border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+  color: var(--primary);
+}
+
+button.secondary:hover:not(:disabled),
+.button-link.secondary:hover {
+  background: var(--primary-soft);
+}
+
+button.ghost {
+  border-color: transparent;
+  background: transparent;
+}
+
+button.danger {
+  border-color: color-mix(in srgb, var(--error) 45%, var(--border));
+  color: var(--error);
+}
+
+button.danger:hover:not(:disabled) {
+  background: var(--error-soft);
+}
+
+button.big {
+  width: 100%;
+  min-height: 60px;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+button.icon {
+  min-width: 46px;
+  padding: 0.5rem;
+}
+
+button.link {
+  min-height: 44px;
+  padding: 0 0.25rem;
+  border: none;
+  background: none;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+button.link:hover:not(:disabled) {
+  background: none;
+}
+
+button[aria-pressed='true'],
+button[aria-pressed='true']:hover:not(:disabled) {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-text);
+}
+
+/* --- Formulaires ---------------------------------------------------------------------- */
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='search'],
+select,
+textarea,
+input[type='file'] {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  outline: 3px solid color-mix(in srgb, var(--primary) 25%, transparent);
+  outline-offset: 0;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 18rem;
+  line-height: 1.75;
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.row > input,
+.row > select {
+  flex: 1 1 14rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* --- Cartes, en-têtes, barres d'outils ------------------------------------------------- */
+
+.card {
+  --card-pad: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--card-pad);
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.card.narrow {
+  max-width: 26rem;
+  margin: 12vh auto;
+}
+
+.card > h2:first-child,
+.card > .section-header:first-child h2 {
+  margin-top: 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.section-header h2,
+.section-header h3 {
+  margin: 0;
+}
+
+.toolbar,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.actions {
+  margin-top: 1rem;
+}
+
+.page-header {
+  margin: 0.75rem 0 1.5rem;
+}
+
+.page-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* --- Messages --------------------------------------------------------------------------- */
+
+.message {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  margin: 0.75rem 0;
+  border: 1px solid transparent;
+}
+
+/* Un message qui propose une action : le bouton passe sous le texte. */
+.message:has(> button) {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.message.error {
+  background: var(--error-soft);
+  color: var(--error);
+  border-color: color-mix(in srgb, var(--error) 25%, transparent);
+}
+
+.message.warning {
+  background: var(--warning-soft);
+  color: var(--warning);
+  border-color: color-mix(in srgb, var(--warning) 25%, transparent);
+}
+
+.message.success {
+  background: var(--success-soft);
+  color: var(--success);
+  border-color: color-mix(in srgb, var(--success) 25%, transparent);
+}
+
+.message.info {
+  background: var(--primary-soft);
+  color: var(--text);
+}
+
+.message p {
+  margin: 0;
+}
+
+/* --- Pastilles ------------------------------------------------------------------------- */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: var(--surface-2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.chip.done {
+  background: var(--success-soft);
+  color: var(--success);
+  border-color: transparent;
+}
+
+.chip.todo {
+  background: var(--warning-soft);
+  color: var(--warning);
+  border-color: transparent;
+}
+
+.chip.info {
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-color: transparent;
+}
+
+.badge-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--primary-text);
+  font-size: 0.95rem;
+  font-weight: 700;
+}

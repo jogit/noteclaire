@@ -1,0 +1,385 @@
+/* --- Cours (Markdown), comparaison, éditeur ---------------------------------------------- */
+
+/* Encadrés : couleur par type, libellé toujours écrit. */
+.callout {
+  --callout: #4f6fe0;
+  margin: 1.1rem 0;
+  padding: 0.8rem 1.1rem;
+  border-left: 5px solid var(--callout);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--callout) 9%, var(--surface));
+}
+
+.callout-definition {
+  --callout: #3b6fd8;
+}
+
+.callout-propriete {
+  --callout: #8a4fd6;
+}
+
+.callout-exemple {
+  --callout: #2f9b5a;
+}
+
+.callout-methode {
+  --callout: #128a8a;
+}
+
+.callout-attention {
+  --callout: #d4572e;
+}
+
+.callout-retenir {
+  --callout: #c48a00;
+}
+
+.callout-title {
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+}
+
+.callout-label {
+  display: inline-block;
+  padding: 0.05rem 0.6rem;
+  margin-right: 0.25rem;
+  border-radius: 999px;
+  background: var(--callout);
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.callout > :last-child {
+  margin-bottom: 0;
+}
+
+/* Surligneur (==mot-clé==), aussi dans les passages cités sur une ligne */
+.markdown mark,
+.excerpt mark,
+.explain-quote mark,
+.selection-text mark {
+  padding: 0 0.12em;
+  border-radius: 3px;
+  background: linear-gradient(transparent 30%, color-mix(in srgb, #ffd43b 75%, transparent) 30%);
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+/* Schémas et images */
+.diagram {
+  margin: 1.1rem 0;
+  padding: 1rem;
+  overflow-x: auto;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.diagram svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.diagram-source {
+  margin: 0;
+  text-align: left;
+  white-space: pre-wrap;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.diagram[data-rendered] .diagram-source {
+  display: none;
+}
+
+.diagram-error .diagram-source {
+  display: block;
+}
+
+.markdown img {
+  display: block;
+  max-width: 100%;
+  max-height: 30rem;
+  margin: 1rem auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.image-blocked {
+  color: var(--muted);
+}
+
+.schema-placeholder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding: 0.9rem 1rem;
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+}
+
+.schema-placeholder p {
+  margin: 0;
+}
+
+.schema-placeholder button {
+  display: none;
+}
+
+.can-add-images .schema-placeholder button {
+  display: inline-flex;
+}
+
+.markdown {
+  /* Jamais de mot coupé au milieu (« Albatr/os ») : une coupure n'a lieu que si le mot est
+     plus large que sa ligne entière. */
+  overflow-wrap: break-word;
+}
+
+.markdown h1 {
+  font-size: 1.6rem;
+}
+
+.markdown h1 {
+  color: color-mix(in srgb, var(--subject, var(--primary)) 70%, var(--text));
+}
+
+.markdown h2 {
+  font-size: 1.3rem;
+  padding: 0.15rem 0 0.15rem 0.75rem;
+  border-left: 5px solid var(--subject, var(--primary));
+  border-radius: 2px;
+}
+
+.markdown h3 {
+  color: color-mix(in srgb, var(--subject, var(--primary)) 60%, var(--text));
+}
+
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.markdown th,
+.markdown td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.markdown th {
+  background: color-mix(in srgb, var(--subject, var(--primary)) 10%, var(--surface));
+}
+
+.markdown li + li {
+  margin-top: 0.25rem;
+}
+
+.markdown .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+.change-counts {
+  margin: 0.5rem 0 0.25rem;
+}
+
+.change-counts .chip {
+  font-size: 0.95rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.change-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.change-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+.change-list del,
+.change-list ins {
+  padding: 0 0.25rem;
+  border-radius: 4px;
+}
+
+.full-diff {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+
+.full-diff summary {
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.diff-legend {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.diff-text {
+  white-space: pre-wrap;
+}
+
+del {
+  background: var(--removed-bg);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+ins {
+  background: var(--added-bg);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.editor-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+
+.preview-title {
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+}
+
+.preview {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0 0.85rem;
+  min-height: 18rem;
+}
+
+.version-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.version-list button {
+  width: 100%;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.version-list button[aria-pressed='true'] .hint {
+  color: inherit;
+}
+
+.version-preview {
+  margin-top: 1rem;
+}
+
+.selection-bar {
+  position: sticky;
+  top: 4.5rem;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0.9rem;
+  margin: 0.5rem 0;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.selection-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* « Je n'ai pas compris » : fenêtre centrée, une seule chose à lire. */
+dialog.explain {
+  width: min(36rem, calc(100vw - 2rem));
+  padding: 1.5rem 1.75rem;
+}
+
+.explain h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.explain-quote {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.explain-result {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.explain-result > .markdown > :first-child {
+  margin-top: 0;
+}
+
+.explain-answer {
+  padding: 0.5rem 1rem;
+  border-left: 4px solid var(--success);
+  border-radius: 8px;
+  background: var(--success-soft);
+}
+
+.explain-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.explain-more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.explain-more .hint {
+  margin: 0 0.25rem 0 0;
+}
+
+.explain-more button {
+  min-height: 40px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.95rem;
+}
+
+.explain-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+}

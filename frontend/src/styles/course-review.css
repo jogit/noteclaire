@@ -1,0 +1,233 @@
+/* --- Mon cours : lecture et relecture de l'IA côte à côte ------------------------------- */
+
+.course-card .section-header h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.course-version {
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.course-actions button {
+  min-height: 40px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+.mode-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.mode-header h3 {
+  margin: 0;
+}
+
+/* Cours en grand caractère, sur toute la largeur (lecture et modification). */
+.course-view,
+.course-mode {
+  font-size: 1.05rem;
+}
+
+/* Zones qui reçoivent le focus par programme : pas de contour. */
+.course-view:focus,
+.course-mode h3:focus {
+  outline: none;
+}
+
+.course-view > .course-review-bar,
+.course-main {
+  position: relative; /* garde le champ de fichier caché dans la colonne */
+  min-width: 0;
+}
+
+/* Petit écran : le panneau du bas ne doit pas cacher la fin du cours. */
+.course-view.reviewing .course-main {
+  padding-bottom: 24rem;
+}
+
+.course-review-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--muted);
+}
+
+.course-review-bar > .ai-progress,
+.course-review-bar > .message {
+  flex-basis: 100%;
+}
+
+.course-review-bar.todo {
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: var(--warning-soft);
+  color: var(--text);
+}
+
+.course-review-bar.todo svg {
+  color: var(--warning);
+}
+
+.course-review-bar .ok {
+  color: var(--success);
+}
+
+.course-review-bar .primary {
+  margin-left: auto;
+}
+
+/* Un point de relecture à la fois, dans un panneau qui se place tout seul :
+   en bas de l'écran (petit écran), à droite du cours (grand écran). Rien à déplacer. */
+.review-sheet {
+  position: fixed;
+  z-index: 30;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  width: min(40rem, calc(100vw - 2rem));
+  max-height: min(26rem, 60vh);
+  overflow-y: auto;
+  padding: 0.9rem 1rem 0;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 10px 40px rgb(24 32 70 / 22%);
+}
+
+/* Accepter / Refuser toujours visibles, même si la suggestion est longue. */
+.review-sheet .suggestion .actions {
+  position: sticky;
+  bottom: 0;
+  margin: 0.6rem -1rem 0;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+@media (min-width: 1100px) {
+  .course-view.reviewing {
+    display: grid;
+    /* Le cours ne bouge pas : le panneau vient se placer juste à sa droite. */
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 28rem);
+    grid-template-areas:
+      'bar .'
+      'course sheet';
+    justify-content: start;
+    column-gap: 2rem;
+    align-items: start;
+  }
+
+  .course-view.reviewing > .course-review-bar {
+    grid-area: bar;
+  }
+
+  .course-view.reviewing .course-main {
+    grid-area: course;
+    margin: 0;
+    padding-bottom: 0;
+  }
+
+  .course-view.reviewing .review-sheet {
+    grid-area: sheet;
+    position: sticky;
+    top: 5.5rem;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: auto;
+    max-height: calc(100vh - 7rem);
+    box-shadow: var(--shadow);
+  }
+}
+
+.review-sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.review-sheet-head h3 {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.review-sheet-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.review-sheet .suggestion {
+  margin: 0;
+  padding: 0.25rem 0 0;
+  border: none;
+  box-shadow: none;
+}
+
+.suggestion-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.suggestion-head h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.suggestion-head .link {
+  font-size: 0.95rem;
+}
+
+.suggestion blockquote + blockquote {
+  margin-top: 0.4rem;
+}
+
+blockquote.before {
+  border-left-color: var(--error);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--error) 60%, transparent);
+  opacity: 0.85;
+}
+
+.suggestion-reason {
+  margin: 0.6rem 0 0.25rem;
+}
+
+.suggestion .hint {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+}
+
+/* Passage du cours visé par une suggestion (différent du surligneur jaune du cours). */
+.markdown mark.suggestion-anchor {
+  scroll-margin-top: 7rem; /* sous la barre de recherche */
+  padding: 0;
+  background: none;
+  color: inherit;
+}
+
+.markdown mark.suggestion-anchor.active {
+  background: color-mix(in srgb, var(--focus) 35%, transparent);
+  border-bottom: 3px solid var(--focus);
+  border-radius: 2px;
+}

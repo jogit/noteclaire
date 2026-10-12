@@ -1,0 +1,30 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+dist/
+coverage/
+data/*.db
+data/*.sqlite
+data/*.db-*
+# Jetons ChatGPT chiffrés et leur clé : ne jamais versionner
+data/secrets/
+.DS_Store
+data/photos/
+# Programmes officiels : téléchargés à la demande (backend/app/data/references_catalog.json)
+data/references/*/
+backups/*
+!backups/.gitkeep
+test-results
+playwright-report
+
+
+.coverage
+_site/
+
+# Application de bureau Windows : travail d'essai gardé en local, non publié
+desktop/
+build/

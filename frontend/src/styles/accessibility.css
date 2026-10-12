@@ -1,0 +1,144 @@
+/* --- Accessibilité (enfants dys) ------------------------------------------------------- */
+
+input[type='checkbox'],
+input[type='radio'] {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+/* Une ligne de case à cocher se clique en entier, avec une zone d'au moins 44 px. */
+label:has(> input[type='checkbox']),
+label:has(> input[type='radio']) {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  margin: 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Sections repliables : une flèche bien visible indique qu'on peut ouvrir. */
+summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: '▸';
+  flex: none;
+  width: 1.2rem;
+  text-align: center;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+details[open] > summary::before {
+  content: '▾';
+}
+
+/* Lignes de texte courtes : lecture plus facile. */
+.hint,
+.page-header p,
+.intro,
+.message {
+  max-width: 70ch;
+}
+
+.button-like .button-text {
+  display: grid;
+  line-height: 1.2;
+  text-align: left;
+}
+.button-like .button-text small {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* --- Mise en page : une action principale, des gestes secondaires calmes ---------------- */
+
+/* L'action principale d'une étape reste visible sans avoir à faire défiler. */
+.action-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  display: grid;
+  gap: 0.5rem;
+  margin: 1.25rem calc(-1 * var(--card-pad)) calc(-1 * var(--card-pad));
+  padding: 0.85rem var(--card-pad) 0.9rem;
+  border-top: 1px solid var(--border);
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: var(--surface);
+  box-shadow: 0 -8px 16px -12px rgb(24 32 70 / 18%);
+}
+
+.action-bar button.big {
+  margin-top: 0;
+}
+
+.action-bar .save-status {
+  justify-content: center;
+}
+
+/* Une section repliable ressemble à un bouton : on voit qu'on peut cliquer. */
+details:not(.card) > summary {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-weight: 600;
+  width: fit-content;
+}
+
+details:not(.card) > summary:hover {
+  background: var(--surface-2);
+}
+
+details[open]:not(.card) > summary {
+  margin-bottom: 0.75rem;
+}
+
+details.card > summary {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+details.card[open] > summary {
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .action-bar {
+    gap: 0.2rem;
+    padding-block: 0.6rem 0.5rem;
+  }
+
+  .action-bar button.big {
+    min-height: 52px;
+    font-size: 1rem;
+  }
+
+  .action-bar .save-status {
+    font-size: 0.85rem;
+  }
+}
+
+.other-subjects {
+  margin-top: 1rem;
+}
+
+.other-subjects > .card-grid {
+  margin-top: 0.5rem;
+}

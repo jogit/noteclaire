@@ -1,0 +1,110 @@
+/* --- Éditeur visuel du cours ------------------------------------------------------------- */
+
+.rich-editor {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.editor-toolbar {
+  position: sticky;
+  top: 4.4rem;
+  z-index: 6;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.toolbar-group {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.editor-toolbar button {
+  min-height: 44px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.95rem;
+}
+
+.highlight-button svg {
+  color: #c48a00;
+}
+
+.callout-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  flex-basis: 100%;
+}
+
+.callout-picker .hint {
+  margin: 0 0.25rem 0 0;
+}
+
+.callout-chip {
+  --callout: #4f6fe0;
+  min-height: 38px;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  border-color: var(--callout);
+  color: var(--text);
+  background: color-mix(in srgb, var(--callout) 10%, var(--surface));
+}
+
+.callout-chip[aria-pressed='true'],
+.callout-chip[aria-pressed='true']:hover:not(:disabled) {
+  background: var(--callout);
+  border-color: var(--callout);
+  color: #fff;
+}
+
+.rich-editor-frame {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.rich-editor-content {
+  min-height: 24rem;
+  padding: 0.5rem 1.25rem 1.25rem;
+  outline: none;
+}
+
+.rich-editor-frame:focus-within {
+  border-color: var(--primary);
+  outline: 3px solid color-mix(in srgb, var(--primary) 25%, transparent);
+}
+
+.rich-editor-content .math-node {
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.rich-editor-content .math-node:hover,
+.rich-editor-content .ProseMirror-selectednode {
+  outline: 2px solid var(--primary);
+}
+
+.rich-editor-content .math-block {
+  display: block;
+  margin: 0.75rem 0;
+  text-align: center;
+}
+
+.rich-editor-content table {
+  table-layout: fixed;
+}
+
+.rich-editor-content .selectedCell {
+  background: var(--primary-soft);
+}
+
+.advanced-link {
+  margin-left: auto;
+  font-size: 0.95rem;
+}

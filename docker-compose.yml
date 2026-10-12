@@ -1,0 +1,52 @@
+# NoteClaire : deux conteneurs (application et interface), téléchargés depuis ghcr.io.
+# Les images sont téléchargées depuis ghcr.io. Pour les construire depuis les sources, voir docker-compose.override.yml.
+# Réglages : fichier .env (voir .env.example).
+name: noteclaire
+
+services:
+  backend:
+    image: ghcr.io/jogit/noteclaire-backend:${NOTECLAIRE_VERSION:-latest}
+    environment:
+      APP_ENV: production
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      APP_PASSWORD: ${APP_PASSWORD:?Renseignez APP_PASSWORD dans le fichier .env (voir .env.example)}
+      DATABASE_URL: sqlite:////data/app.db
+      DATA_DIR: /data
+      BACKUP_DIR: /backups
+      BACKUP_KEEP: ${BACKUP_KEEP:-7}
+      AI_PROVIDER: ${AI_PROVIDER:-openai}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-6-luna}
+      AI_TIMEOUT_SECONDS: ${AI_TIMEOUT_SECONDS:-120}
+      LOCAL_AI_BASE_URL: ${LOCAL_AI_BASE_URL:-http://host.docker.internal:11434/v1}
+      LOCAL_AI_MODEL: ${LOCAL_AI_MODEL:-qwen3:8b}
+      LOCAL_AI_API_KEY: ${LOCAL_AI_API_KEY:-}
+      CHATGPT_REDIRECT_PORT: ${HTTP_PORT:-8080}
+      CHATGPT_MODEL: ${CHATGPT_MODEL:-}
+      AI_MONTHLY_BUDGET_EUR: ${AI_MONTHLY_BUDGET_EUR:-5}
+      AI_INPUT_PRICE_EUR_PER_MTOK: ${AI_INPUT_PRICE_EUR_PER_MTOK:-0.09}
+      AI_OUTPUT_PRICE_EUR_PER_MTOK: ${AI_OUTPUT_PRICE_EUR_PER_MTOK:-0.45}
+    volumes:
+      - noteclaire-data:/data
+      - noteclaire-backups:/backups
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    image: ghcr.io/jogit/noteclaire-frontend:${NOTECLAIRE_VERSION:-latest}
+    ports:
+      - "${HTTP_PORT:-8080}:8080"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  noteclaire-data:
+  noteclaire-backups:

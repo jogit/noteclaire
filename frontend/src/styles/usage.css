@@ -1,0 +1,75 @@
+/* --- Consommation ---------------------------------------------------------------------------- */
+
+.usage-totals {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.usage-totals div {
+  flex: 1 1 8rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.usage-totals dt {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.usage-totals dd {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.usage-table {
+  width: 100%;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+}
+
+.usage-table th,
+.usage-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.usage-table th:first-child {
+  text-align: left;
+}
+
+.recent-runs {
+  margin-top: 1rem;
+}
+
+.recent-runs summary {
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.recent-runs ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.run-error {
+  display: block;
+  color: var(--error);
+  font-size: 0.95rem;
+}
+
+.usage {
+  margin-top: 2rem;
+}

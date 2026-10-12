@@ -1,0 +1,818 @@
+[
+  {
+    "level": "seconde",
+    "subject": "francais",
+    "title": "Programme de français de seconde",
+    "source": "Bulletin officiel spécial n° 1 du 22 janvier 2019, modifié par l'arrêté du 28 septembre 2020 (JORF du 8 octobre 2020) — version consolidée publiée par eduscol",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/04-annexe1francais2ebomodifiepdf-69834.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "mathematiques",
+    "title": "Programme de mathématiques de seconde générale et technologique (rentrée 2026)",
+    "source": "Nouveau programme de mathématiques publié au Bulletin officiel en 2026, appliqué à partir de la rentrée 2026 (seconde et première)",
+    "school_year": "",
+    "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%93%20Programme%20d%26%23039%3Benseignement%20de%20math%C3%A9matiques%20de%20la%20classe%20de%20seconde%20g%C3%A9n%C3%A9rale%20et%20technologique-515402.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "histoire-geographie",
+    "title": "Programme d'histoire-géographie de seconde",
+    "source": "Bulletin officiel spécial n° 1 du 22 janvier 2019 (version corrigée)",
+    "school_year": "",
+    "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/69/9/spe577_annexe1CORR_1063699.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "ses",
+    "title": "Programme de sciences économiques et sociales de seconde",
+    "source": "Bulletin officiel spécial n° 1 du 22 janvier 2019",
+    "school_year": "",
+    "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/05/3/spe638_annexe_1063053.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "physique-chimie",
+    "title": "Programme de physique-chimie de seconde",
+    "source": "Bulletin officiel spécial n° 1 du 22 janvier 2019",
+    "school_year": "",
+    "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "svt",
+    "title": "Programme de sciences de la vie et de la Terre de seconde",
+    "source": "Bulletin officiel spécial n° 1 du 22 janvier 2019",
+    "school_year": "",
+    "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/00/8/spe647_annexe_1063008.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "anglais",
+    "title": "Programme d'anglais pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 4",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe4.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "espagnol",
+    "title": "Programme d'espagnol pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 10",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe10.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "allemand",
+    "title": "Programme d'allemand pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 2",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe2.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "snt",
+    "title": "Programme de sciences numériques et technologie de seconde",
+    "source": "Bulletin officiel spécial n° 1 du 22 janvier 2019",
+    "school_year": "",
+    "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/08/5/spe641_annexe_1063085.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "emc",
+    "title": "Programme d'enseignement moral et civique du CP à la terminale",
+    "source": "Annexe du programme d'EMC (cours préparatoire à classe terminale, voies générale, technologique et professionnelle), education.gouv.fr — fichier de juin 2024",
+    "school_year": "",
+    "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%94%20Programme%20d%E2%80%99enseignement%20moral%20et%20civique%20du%20cours%20pr%C3%A9paratoire%20%C3%A0%20la%20classe%20terminale%20des%20voies%20g%C3%A9n%C3%A9rale%2C%20technologique%20et%20professionnelle%20et%20des%20classes%20pr%C3%A9parant%20au%20CAP-402159.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "sciences-ingenieur",
+    "title": "Programme de l'option sciences de l'ingénieur (seconde)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe570annexe1062531pdf-84504.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "cit",
+    "title": "Programme de l'option création et innovation technologiques (seconde)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe570annexe1062531pdf-84504.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "management-gestion",
+    "title": "Programme de l'option management et gestion (seconde)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe629annexe1062556pdf-84597.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "biotechnologies",
+    "title": "Option biotechnologies (seconde)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe568annexe1062455pdf-82686.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "creation-culture-design",
+    "title": "Option création et culture-design (seconde)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe569annexe1062482pdf-84402.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "danse-musique-theatre",
+    "title": "Option culture et pratique de la danse, de la musique ou du théâtre (seconde)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/ensel795annexe1160992pdf-82836.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "sthr",
+    "title": "STHR : mathématiques (seconde)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe644annexe1063511pdf-84147.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "sthr",
+    "title": "STHR : sciences (seconde)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/03-ensel3256annexesciences409815pdf-83676.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "sthr",
+    "title": "STHR : sciences et technologies culinaires (seconde)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/04-ensel3256annexesciencesettechnologiesculinaires409817pdf-83688.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "sthr",
+    "title": "STHR : sciences et technologies des services (seconde)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/05-ensel3256annexesciencesettechnologiesservices409819pdf-83685.pdf"
+  },
+  {
+    "level": "seconde",
+    "subject": "sthr",
+    "title": "STHR : économie et gestion hôtelière (seconde)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/01-ensel3256annexeeco-gestion409811pdf-83682.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "francais",
+    "title": "Programme de français de première générale et technologique",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/04annexe2francais1egtbomodifiepdf-69837.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "mathematiques",
+    "title": "Programme de mathématiques (spécialité) de première générale (rentrée 2026)",
+    "source": "Nouveau programme de mathématiques publié au Bulletin officiel en 2026, appliqué à partir de la rentrée 2026 (seconde et première)",
+    "school_year": "",
+    "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%93%20Programme%20d%26%23039%3Benseignement%20de%20sp%C3%A9cialit%C3%A9%20de%20math%C3%A9matiques%20de%20la%20classe%20de%20premi%C3%A8re%20de%20la%20voie%20g%C3%A9n%C3%A9rale-515408.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "histoire-geographie",
+    "title": "Programme d'histoire-géographie de première générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe577annexe21062939pdf-83010.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "ses",
+    "title": "Programme de SES (spécialité) de première générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe639annexe1063544pdf-82752.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "physique-chimie",
+    "title": "Programme de physique-chimie (spécialité) de première générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe635annexe1063432pdf-82266.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "svt",
+    "title": "Programme de SVT (spécialité) de première générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe648annexe1063542pdf-82878.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "anglais",
+    "title": "Programme d'anglais pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 4",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe4.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "espagnol",
+    "title": "Programme d'espagnol pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 10",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe10.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "allemand",
+    "title": "Programme d'allemand pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 2",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe2.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "emc",
+    "title": "Programme d'enseignement moral et civique du CP à la terminale",
+    "source": "Annexe du programme d'EMC (cours préparatoire à classe terminale, voies générale, technologique et professionnelle), education.gouv.fr — fichier de juin 2024",
+    "school_year": "",
+    "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%94%20Programme%20d%E2%80%99enseignement%20moral%20et%20civique%20du%20cours%20pr%C3%A9paratoire%20%C3%A0%20la%20classe%20terminale%20des%20voies%20g%C3%A9n%C3%A9rale%2C%20technologique%20et%20professionnelle%20et%20des%20classes%20pr%C3%A9parant%20au%20CAP-402159.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "enseignement-scientifique",
+    "title": "Programme d'enseignement scientifique de première générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%93%20Programme%20d%E2%80%99enseignement%20scientifique%20de%20%20premi%C3%A8re%20g%C3%A9n%C3%A9rale-365055.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "enseignement-scientifique",
+    "title": "Programme de mathématiques intégré à l'enseignement scientifique de première générale (rentrée 2026)",
+    "source": "Nouveau programme de mathématiques publié au Bulletin officiel en 2026, appliqué à partir de la rentrée 2026 (seconde et première)",
+    "school_year": "",
+    "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%93%20Programme%20de%20math%C3%A9matiques%20int%C3%A9gr%C3%A9%20%C3%A0%20l%26%23039%3Benseignement%20scientifique%20en%20classe%20de%20premi%C3%A8re%20g%C3%A9n%C3%A9rale-515405.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "nsi",
+    "title": "Programme de NSI (spécialité) de première générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe633annexe1063268pdf-89499.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "hggsp",
+    "title": "Programme d'HGGSP (spécialité) de première générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe576annexe1062925pdf-83244.pdf"
+  },
+  {
+    "level": "premiere",
+    "subject": "sciences-ingenieur",
+    "title": "Programme de sciences de l'ingénieur (spécialité) de première générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe640annexe1063436pdf-82092.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "mathematiques",
+    "title": "Programme de mathématiques (spécialité) de terminale générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026 ; programme de 2019, un nouveau s'applique à partir de la rentrée 2027",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe246annexe1158907pdf-84159.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "histoire-geographie",
+    "title": "Programme d'histoire-géographie de terminale générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe243annexe11159172pdf-83013.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "ses",
+    "title": "Programme de SES (spécialité) de terminale générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe253annexe1158821pdf-82755.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "physique-chimie",
+    "title": "Programme de physique-chimie (spécialité) de terminale générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe249annexe1158929pdf-82269.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "svt",
+    "title": "Programme de SVT (spécialité) de terminale générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe252annexe1159114pdf-82881.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "anglais",
+    "title": "Programme d'anglais pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 4",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe4.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "espagnol",
+    "title": "Programme d'espagnol pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 10",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe10.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "allemand",
+    "title": "Programme d'allemand pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 2",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe2.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "emc",
+    "title": "Programme d'enseignement moral et civique du CP à la terminale",
+    "source": "Annexe du programme d'EMC (cours préparatoire à classe terminale, voies générale, technologique et professionnelle), education.gouv.fr — fichier de juin 2024",
+    "school_year": "",
+    "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%94%20Programme%20d%E2%80%99enseignement%20moral%20et%20civique%20du%20cours%20pr%C3%A9paratoire%20%C3%A0%20la%20classe%20terminale%20des%20voies%20g%C3%A9n%C3%A9rale%2C%20technologique%20et%20professionnelle%20et%20des%20classes%20pr%C3%A9parant%20au%20CAP-402159.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "philosophie",
+    "title": "Programme de philosophie de terminale générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe238annexe11159159pdf-83640.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "enseignement-scientifique",
+    "title": "Programme d'enseignement scientifique de terminale générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%93%20Programme%20d%E2%80%99enseignement%20scientifique%20de%20%20terminale%20g%C3%A9n%C3%A9rale-365058.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "nsi",
+    "title": "Programme de NSI (spécialité) de terminale générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe247annexe1158933pdf-89502.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "hggsp",
+    "title": "Programme d'HGGSP (spécialité) de terminale générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe254annexe1159180pdf-83247.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "sciences-ingenieur",
+    "title": "Programme de sciences de l'ingénieur (spécialité) de terminale générale",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe640annexe1063436pdf-82092.pdf"
+  },
+  {
+    "level": "terminale",
+    "subject": "sciences-ingenieur",
+    "title": "Programme de sciences physiques en complément de sciences de l'ingénieur (terminale générale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe269annexe1159036pdf-82095.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "francais",
+    "title": "Programme de français de première générale et technologique",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/04annexe2francais1egtbomodifiepdf-69837.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "mathematiques",
+    "title": "Programme de mathématiques de première technologique (rentrée 2026)",
+    "source": "Nouveau programme de mathématiques publié au Bulletin officiel en 2026, appliqué à partir de la rentrée 2026 (seconde et première)",
+    "school_year": "",
+    "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%93%20Programme%20d%E2%80%99enseignement%20de%20math%C3%A9matiques%20de%20la%20classe%20de%20premi%C3%A8re%20de%20la%20voie%20technologique-515411.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "histoire-geographie",
+    "title": "Programme d'histoire-géographie de première technologique",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe577annexe31062941pdf-83016.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "anglais",
+    "title": "Programme d'anglais pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 4",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe4.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "espagnol",
+    "title": "Programme d'espagnol pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 10",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe10.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "allemand",
+    "title": "Programme d'allemand pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 2",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe2.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "emc",
+    "title": "Programme d'enseignement moral et civique du CP à la terminale",
+    "source": "Annexe du programme d'EMC (cours préparatoire à classe terminale, voies générale, technologique et professionnelle), education.gouv.fr — fichier de juin 2024",
+    "school_year": "",
+    "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%94%20Programme%20d%E2%80%99enseignement%20moral%20et%20civique%20du%20cours%20pr%C3%A9paratoire%20%C3%A0%20la%20classe%20terminale%20des%20voies%20g%C3%A9n%C3%A9rale%2C%20technologique%20et%20professionnelle%20et%20des%20classes%20pr%C3%A9parant%20au%20CAP-402159.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "stmg",
+    "title": "STMG : droit et économie (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe646annexe122-11063868pdf-84606.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "stmg",
+    "title": "STMG : management (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe646annexe21063602pdf-84603.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "stmg",
+    "title": "STMG : sciences de gestion et numérique (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe646annexe31063606pdf-84600.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "sti2d",
+    "title": "STI2D : innovation technologique, ingénierie et développement durable (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe591annexe11063610pdf-84507.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "sti2d",
+    "title": "STI2D : physique-chimie et mathématiques (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe591annexe222-11063856pdf-84510.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "stl",
+    "title": "STL : biochimie-biologie (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe645annexe11063584pdf-82689.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "stl",
+    "title": "STL : biotechnologies (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe645annexe222-11063862pdf-82692.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "stl",
+    "title": "STL : physique-chimie et mathématiques (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe645annexe322-11063864pdf-82698.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "stl",
+    "title": "STL : sciences physiques et chimiques en laboratoire (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe645annexe422-11063866pdf-82695.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "st2s",
+    "title": "ST2S : biologie et physiopathologie humaines (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe642annexe11063551pdf-82500.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "st2s",
+    "title": "ST2S : physique-chimie pour la santé (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe642annexe21063553pdf-82503.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "st2s",
+    "title": "ST2S : sciences et techniques sanitaires et sociales (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe642annexe31063555pdf-82506.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "std2a",
+    "title": "STD2A : design et métiers d'art (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe643annexe11063858pdf-84411.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "std2a",
+    "title": "STD2A : outils et langages numériques (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe643annexe222-11063860pdf-84408.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "std2a",
+    "title": "STD2A : physique-chimie (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe643annexe31063620pdf-84405.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "s2tmd",
+    "title": "S2TMD : culture, sciences et pratique (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/ensel792annexe21160987pdf-82842.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "s2tmd",
+    "title": "S2TMD : économie, droit et environnement du spectacle vivant (première)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/ensel792annexe11160985pdf-82839.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "sthr",
+    "title": "STHR : enseignement scientifique alimentation-environnement (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/ensel565annexe11550178pdf-83691.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "sthr",
+    "title": "STHR : sciences et technologies culinaires (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/ensel565annexe10550176pdf-83694.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "sthr",
+    "title": "STHR : sciences et technologies des services (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/ensel565annexe9551145pdf-83697.pdf"
+  },
+  {
+    "level": "premiere-techno",
+    "subject": "sthr",
+    "title": "STHR : économie et gestion hôtelière (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/ensel565annexe8551143pdf-83700.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "mathematiques",
+    "title": "Programme de mathématiques de terminale technologique",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026 ; programme de 2019, un nouveau s'applique à partir de la rentrée 2027",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe242annexe1158914pdf-84153.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "histoire-geographie",
+    "title": "Programme d'histoire-géographie de terminale technologique",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe243annexe21159174pdf-83019.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "anglais",
+    "title": "Programme d'anglais pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 4",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe4.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "espagnol",
+    "title": "Programme d'espagnol pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 10",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe10.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "allemand",
+    "title": "Programme d'allemand pour les classes de lycée général et technologique",
+    "source": "Arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères (collège et lycée général et technologique), Bulletin officiel n° 22 du 29 mai 2025, annexe 2",
+    "school_year": "rentrée 2025 en seconde, rentrée 2026 en première et terminale",
+    "url": "https://www.education.gouv.fr/sites/default/files/ensel621_annexe2.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "emc",
+    "title": "Programme d'enseignement moral et civique du CP à la terminale",
+    "source": "Annexe du programme d'EMC (cours préparatoire à classe terminale, voies générale, technologique et professionnelle), education.gouv.fr — fichier de juin 2024",
+    "school_year": "",
+    "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%94%20Programme%20d%E2%80%99enseignement%20moral%20et%20civique%20du%20cours%20pr%C3%A9paratoire%20%C3%A0%20la%20classe%20terminale%20des%20voies%20g%C3%A9n%C3%A9rale%2C%20technologique%20et%20professionnelle%20et%20des%20classes%20pr%C3%A9parant%20au%20CAP-402159.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "philosophie",
+    "title": "Programme de philosophie de terminale technologique",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe238annexe21159161pdf-83643.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "stmg",
+    "title": "STMG : droit et économie (terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe262annexe11159139pdf-84612.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "stmg",
+    "title": "STMG : management, sciences de gestion et numérique (terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe262annexe21159141pdf-84609.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "sti2d",
+    "title": "STI2D : innovation technologique, ingénierie et développement durable (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe591annexe11063610pdf-84507.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "sti2d",
+    "title": "STI2D : physique-chimie et mathématiques (terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe261annexe1158935pdf-84513.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "stl",
+    "title": "STL : biochimie-biologie-biotechnologies (terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe260annexe21159165pdf-82701.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "stl",
+    "title": "STL : physique-chimie et mathématiques (terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe260annexe11159163pdf-82707.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "stl",
+    "title": "STL : sciences physiques et chimiques en laboratoire (terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe260annexe31159167pdf-82704.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "st2s",
+    "title": "ST2S : chimie, biologie et physiopathologie humaines (terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe258annexe11159196pdf-82509.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "st2s",
+    "title": "ST2S : sciences et techniques sanitaires et sociales (terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe258annexe21159198pdf-82512.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "std2a",
+    "title": "STD2A : design et métiers d'art (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe643annexe11063858pdf-84411.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "s2tmd",
+    "title": "S2TMD : culture, sciences et pratique (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/ensel792annexe21160987pdf-82842.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "sthr",
+    "title": "STHR : enseignement scientifique alimentation-environnement (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/ensel565annexe11550178pdf-83691.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "sthr",
+    "title": "STHR : sciences et technologies culinaires (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/ensel565annexe10550176pdf-83694.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "sthr",
+    "title": "STHR : sciences et technologies des services (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/ensel565annexe9551145pdf-83697.pdf"
+  },
+  {
+    "level": "terminale-techno",
+    "subject": "sthr",
+    "title": "STHR : économie et gestion hôtelière (première et terminale)",
+    "source": "Programme officiel publié sur eduscol / education.gouv.fr (rubrique « Programmes en vigueur »), relevé en octobre 2026",
+    "school_year": "",
+    "url": "https://eduscol.education.gouv.fr/sites/default/files/document/ensel565annexe8551143pdf-83700.pdf"
+  }
+]

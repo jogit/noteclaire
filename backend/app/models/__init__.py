@@ -1,0 +1,31 @@
+from app.models.entities import (
+    AIRun,
+    AISuggestion,
+    Chapter,
+    Course,
+    Note,
+    NoteVersion,
+    Quiz,
+    ReferenceChunk,
+    ReferenceDocument,
+    RevisionSheet,
+    Student,
+    StudentSubject,
+    Subject,
+)
+
+__all__ = [
+    "AIRun",
+    "AISuggestion",
+    "Chapter",
+    "Course",
+    "Note",
+    "NoteVersion",
+    "Quiz",
+    "ReferenceChunk",
+    "ReferenceDocument",
+    "RevisionSheet",
+    "Student",
+    "StudentSubject",
+    "Subject",
+]

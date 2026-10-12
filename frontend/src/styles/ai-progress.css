@@ -1,0 +1,138 @@
+/* --- Progression estimée des appels IA --------------------------------------------------- */
+
+.ai-progress {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.75rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, var(--border));
+  border-radius: var(--radius-sm);
+  background: var(--primary-soft);
+}
+
+.ai-progress-head,
+.ai-progress-foot {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ai-progress-foot {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.ai-progress-foot .hint {
+  margin: 0;
+}
+
+.ai-progress-icon {
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  animation: ai-sparkle 1.6s ease-in-out infinite;
+}
+
+.ai-progress-percent {
+  margin-left: auto;
+  white-space: nowrap;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--primary);
+}
+
+.ai-progress-track {
+  position: relative;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--primary) 15%, var(--surface));
+  overflow: hidden;
+}
+
+.ai-progress-fill {
+  position: absolute;
+  inset: 0;
+  transform-origin: left;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6b77f0, #9a6df0);
+  transition: transform 0.25s linear;
+}
+
+/* Reflet qui glisse sur la barre : montre que ça avance même quand l'estimation ralentit. */
+.ai-progress-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 45%), transparent);
+  transform: translateX(-100%);
+  animation: ai-shimmer 1.4s ease-in-out infinite;
+}
+
+.ai-progress.done .ai-progress-fill {
+  background: var(--success);
+}
+
+.ai-progress.done .ai-progress-fill::after,
+.ai-progress.done .ai-progress-icon {
+  animation: none;
+}
+
+@keyframes ai-shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes ai-sparkle {
+  50% {
+    transform: scale(1.18) rotate(12deg);
+    opacity: 0.7;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-progress-icon,
+  .ai-progress-fill::after {
+    animation: none;
+  }
+}
+
+/* Les icônes suivent la taille du texte (qui dépend de l'écran et des Réglages). */
+.sidebar svg.lucide,
+.header-search svg.lucide,
+.tab svg.lucide,
+button svg.lucide,
+.button-like svg.lucide,
+.button-link svg.lucide,
+.chip svg.lucide {
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+}
+
+.subject-dot svg.lucide,
+.brand-mark svg.lucide {
+  width: 1em;
+  height: 1em;
+}
+
+/* Téléphone : barre de relecture sur deux lignes (icône + texte, puis les boutons). */
+@media (max-width: 640px) {
+  .course-review-bar.todo {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .course-review-bar.todo .primary,
+  .course-review-bar.todo .link {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-left: 0;
+  }
+
+  .course-review-bar.todo .primary {
+    justify-self: stretch;
+  }
+}

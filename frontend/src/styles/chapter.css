@@ -1,0 +1,242 @@
+/* --- Chapitre ----------------------------------------------------------------------------- */
+
+.chapter-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.chapter-header h1 {
+  margin: 0.25rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.subject-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.75rem 0.2rem 0.3rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--subject) 13%, transparent);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.subject-chip .subject-dot {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+/* Proposition de titre : une ligne discrète au-dessus du cours, pas un grand encadré. */
+.title-proposal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  margin: 0.5rem 0 1rem;
+  color: var(--muted);
+}
+
+.title-proposal p {
+  flex: 1 1 14rem;
+  margin: 0;
+}
+
+.title-proposal strong {
+  color: var(--text);
+}
+
+.rename-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.rename-form input {
+  flex: 1 1 16rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.35rem;
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+  border-radius: calc(var(--radius-sm) + 4px);
+  background: var(--bg-accent);
+  border: 1px solid var(--border);
+}
+
+.tab {
+  flex: 1 0 auto;
+  min-height: 48px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.tab:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+
+.tab[aria-selected='true'] {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+.tab .step-number {
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.tab[aria-selected='true'] .step-number {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-text);
+}
+
+.tab .warning-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--warning);
+}
+
+.save-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.save-status.error {
+  color: var(--error);
+  font-weight: 600;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.35rem);
+  z-index: 15;
+  display: grid;
+  min-width: 15rem;
+  padding: 0.4rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.menu-panel button,
+.menu-panel a {
+  justify-content: flex-start;
+  border: none;
+  background: transparent;
+  min-height: 44px;
+}
+
+.menu-panel .danger-item {
+  color: var(--error);
+}
+
+dialog {
+  width: min(32rem, calc(100vw - 2rem));
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 4px);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+dialog::backdrop {
+  background: rgb(10 12 20 / 45%);
+}
+
+dialog h2 {
+  margin-top: 0;
+}
+
+/* --- Photo ---------------------------------------------------------------------- */
+
+.capture-tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Tous les gestes d'ajout ont la même forme, qu'ils soient un bouton ou une étiquette. */
+.capture-tools > .button-like,
+.capture-tools > button {
+  width: 100%;
+  min-width: 0;
+  justify-content: center;
+}
+
+.group-label {
+  margin: 0 0 -0.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.button-like {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  min-width: 8rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button-like:hover {
+  background: var(--surface-2);
+}
+
+input:focus-visible + .button-like {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.button-like[aria-disabled='true'] {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--error) 18%, transparent);
+  }
+}

@@ -1,0 +1,7 @@
+# Depuis les sources : Docker Compose lit ce fichier en plus de docker-compose.yml et construit
+# les images au lieu de les télécharger. Il n'est pas nécessaire pour installer NoteClaire.
+services:
+  backend:
+    build: ./backend
+  frontend:
+    build: ./frontend

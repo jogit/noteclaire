@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NoteClaire – Remettre ses notes de cours au propre</title>
+    <meta
+      name="description"
+      content="NoteClaire aide les lycéens à remettre leurs notes de cours au propre, avec une IA qui ne remplace jamais leur travail. Auto-hébergé, pensé pour les élèves dys."
+    />
+    <meta
+      property="og:title"
+      content="NoteClaire – Remettre ses notes de cours au propre"
+    />
+    <meta
+      property="og:description"
+      content="De la photo du cahier au cours révisable. Auto-hébergé, pensé pour les élèves dys."
+    />
+    <meta property="og:image" content="screenshots/03-cours.jpg" />
+    <link rel="icon" href="favicon.png" />
+    <link
+      rel="preload"
+      href="lexend.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#contenu">Aller au contenu</a>
+
+    <header class="topbar">
+      <a class="brand" href="#">
+        <img src="logo.png" alt="" width="36" height="36" />
+        NoteClaire
+      </a>
+      <nav aria-label="Principal">
+        <a href="#fonctionnement">Fonctionnement</a>
+        <a href="#dys">Élèves dys</a>
+        <a href="#apercu">Aperçu</a>
+        <a href="#installer">Installer</a>
+        <a class="button small" href="https://github.com/jogit/noteclaire"
+          >GitHub</a
+        >
+      </nav>
+    </header>
+
+    <main id="contenu">
+      <section class="hero">
+        <p class="eyebrow">Pour les lycéens · auto-hébergé · open source</p>
+        <h1>
+          Remettre ses notes de cours au propre, sans que l'IA fasse le travail
+          à leur place.
+        </h1>
+        <p class="lead">
+          L'élève prend ses notes à la main. À la maison, NoteClaire lit la
+          photo du cahier, remet le cours au propre, le relit avec le programme
+          officiel et prépare la révision. Les notes originales sont toujours
+          conservées, et c'est l'élève qui décide de tout.
+        </p>
+        <p class="actions">
+          <a class="button primary" href="#installer">Installer NoteClaire</a>
+          <a class="button" href="https://github.com/jogit/noteclaire"
+            >Voir le code</a
+          >
+        </p>
+        <figure class="demo">
+          <img
+            src="screenshots/demo.gif"
+            alt="Démonstration : une photo de cahier est lue, remise au propre, relue, puis transformée en fiche de révision et en quiz."
+            width="880"
+            height="560"
+          />
+          <figcaption>
+            De la photo du cahier au cours révisable, en quelques clics.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="fonctionnement" class="band">
+        <h2>Quatre étapes, toujours sous le contrôle de l'élève</h2>
+        <ol class="steps">
+          <li>
+            <h3>Noter ou photographier</h3>
+            <p>
+              Saisie au clavier ou photos du cahier. L'IA recopie sans rien
+              corriger et signale les mots qu'elle n'a pas pu lire.
+            </p>
+          </li>
+          <li>
+            <h3>Remettre au propre</h3>
+            <p>
+              Orthographe, ponctuation, mise en forme : encadrés, formules,
+              schémas. Sans reformuler ni inventer.
+            </p>
+          </li>
+          <li>
+            <h3>Relire</h3>
+            <p>
+              Des suggestions une par une, appuyées sur le programme officiel de
+              la classe. Rien ne change sans « Accepter ».
+            </p>
+          </li>
+          <li>
+            <h3>Réviser</h3>
+            <p>
+              Fiche de révision et quiz tirés du cours, et export vers Anki.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="features">
+        <h2>Tout ce qu'il faut, rien de superflu</h2>
+        <ul class="cards">
+          <li>
+            <h3>Photos de cahier</h3>
+            <p>
+              Plusieurs pages, schémas découpés et redessinables, mots douteux à
+              vérifier.
+            </p>
+          </li>
+          <li>
+            <h3>Un espace par enfant</h3>
+            <p>
+              Classe, matières et particularités propres à chaque élève, données
+              séparées.
+            </p>
+          </li>
+          <li>
+            <h3>Ne rien perdre</h3>
+            <p>
+              Historique des notes, corbeille de 30 jours, sauvegardes
+              quotidiennes vérifiées.
+            </p>
+          </li>
+          <li>
+            <h3>L'IA que vous choisissez</h3>
+            <p>
+              Clé OpenAI, abonnement ChatGPT ou modèle local (Ollama, LM
+              Studio).
+            </p>
+          </li>
+          <li>
+            <h3>Programmes officiels</h3>
+            <p>
+              Seconde à terminale, générale et technologique, téléchargés à la
+              demande.
+            </p>
+          </li>
+          <li>
+            <h3>Chez vous</h3>
+            <p>
+              Deux conteneurs Docker, vos données restent sur votre machine.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="dys" class="band dys">
+        <h2>Pensé pour les élèves dys</h2>
+        <div class="two">
+          <ul class="checks">
+            <li>
+              Police Lexend, texte jamais justifié, ni en majuscules, ni en
+              italique
+            </li>
+            <li>
+              Lignes courtes, grands boutons, une seule action principale par
+              étape
+            </li>
+            <li>
+              Thème crème, espacement des lettres et des mots, taille du texte
+              réglables
+            </li>
+            <li>
+              Particularités (dyslexie, dyspraxie, TDAH…) transmises à l'IA pour
+              adapter ses explications
+            </li>
+            <li>
+              Contrastes et libellés contrôlés automatiquement dans chaque thème
+            </li>
+          </ul>
+          <img
+            src="screenshots/07-cours-creme.jpg"
+            alt="Un cours avec le thème crème et l'espacement aéré"
+            width="1100"
+            height="700"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section id="apercu" class="features">
+        <h2>Aperçu</h2>
+        <div class="gallery">
+          <figure>
+            <img
+              src="screenshots/01-accueil.jpg"
+              alt="Accueil"
+              width="1100"
+              height="700"
+              loading="lazy"
+            />
+            <figcaption>Accueil : reprendre où l'on en était</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="screenshots/02-notes.jpg"
+              alt="Photo du cahier lue par l'IA"
+              width="1100"
+              height="700"
+              loading="lazy"
+            />
+            <figcaption>
+              Mes notes : la photo, le texte lu, les mots à vérifier
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="screenshots/03-cours.jpg"
+              alt="Le cours remis au propre"
+              width="1100"
+              height="700"
+              loading="lazy"
+            />
+            <figcaption>Mon cours : encadrés, formules, relecture</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="screenshots/04-reviser.jpg"
+              alt="Fiche de révision et quiz"
+              width="1100"
+              height="700"
+              loading="lazy"
+            />
+            <figcaption>Réviser : fiche et quiz</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="installer" class="band">
+        <h2>Installer en une commande</h2>
+        <p>
+          Il faut seulement
+          <a href="https://docs.docker.com/get-docker/">Docker</a> (Docker
+          Desktop sur Windows et Mac). Le script télécharge la configuration,
+          choisit un mot de passe, démarre l'application et ouvre le navigateur.
+        </p>
+        <div class="install">
+          <div>
+            <h3>Linux et Mac</h3>
+            <pre><code>curl -fsSL https://raw.githubusercontent.com/jogit/noteclaire/main/scripts/install.sh | sh</code></pre>
+          </div>
+          <div>
+            <h3>Windows (PowerShell)</h3>
+            <pre><code>irm https://raw.githubusercontent.com/jogit/noteclaire/main/scripts/install.ps1 | iex</code></pre>
+          </div>
+        </div>
+        <p>
+          NoteClaire s'ouvre ensuite sur <code>http://localhost:8080</code>. Un
+          assistant demande le prénom, la classe et le choix de l'IA, qu'il
+          teste, puis propose de télécharger les programmes officiels. Pour
+          mettre à jour, relancez la même commande.
+        </p>
+        <p class="actions">
+          <a
+            class="button"
+            href="https://github.com/jogit/noteclaire/blob/main/docs/guide.md"
+            >Guide d'utilisation</a
+          >
+          <a
+            class="button"
+            href="https://github.com/jogit/noteclaire/blob/main/docs/configuration.md"
+            >Configuration</a
+          >
+        </p>
+      </section>
+
+      <section class="features">
+        <h2>Vie privée</h2>
+        <p class="narrow">
+          NoteClaire s'installe chez vous : base et fichiers restent dans vos
+          volumes Docker. Seul le texte envoyé à l'IA que vous choisissez quitte
+          la maison (jamais avec un modèle local), et les métadonnées des
+          photos, dont la position GPS, sont retirées avant tout envoi. L'accès
+          est protégé par un mot de passe, et chaque enfant n'accède qu'à ses
+          chapitres.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        NoteClaire est publié sous licence
+        <a href="https://github.com/jogit/noteclaire/blob/main/LICENSE"
+          >GNU AGPL-3.0</a
+        >. <a href="https://github.com/jogit/noteclaire">Code source</a> ·
+        <a href="https://github.com/jogit/noteclaire/issues"
+          >Signaler un problème</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

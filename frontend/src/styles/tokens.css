@@ -1,0 +1,127 @@
+/* NoteClaire — système visuel « moderne doux ».
+   Couleurs en jetons (clair / sombre), une couleur par matière (--subject),
+   grandes zones cliquables, information jamais portée par la couleur seule. */
+
+:root {
+  --font: 'Lexend Variable', 'Lexend', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --bg: #f5f6fb;
+  --bg-accent: #eceffa;
+  --surface: #ffffff;
+  --surface-2: #f8f9fd;
+  --text: #1d2233;
+  --muted: #5a6278;
+  --border: #e2e5ef;
+  --border-strong: #c9cee0;
+  --primary: #4f5bd5;
+  --primary-hover: #4350c4;
+  --primary-text: #ffffff;
+  --primary-soft: #eceefe;
+  --focus: #f0a400;
+  --success: #1f7a50;
+  --success-soft: #e5f5ec;
+  --warning: #8a5a00;
+  --warning-soft: #fff3d6;
+  --error: #b3261e;
+  --error-soft: #fdeceb;
+  --added-bg: #dcf3e4;
+  --removed-bg: #fbe1e1;
+  --shadow-sm: 0 1px 2px rgb(24 32 70 / 6%);
+  --shadow: 0 1px 2px rgb(24 32 70 / 5%), 0 8px 24px rgb(24 32 70 / 7%);
+  --radius: 16px;
+  --radius-sm: 12px;
+  --sidebar-width: 14rem; /* suit la taille du texte */
+
+  font-family: var(--font);
+  /* Taille de base qui suit l'écran : ~17 px sur un portable, jusqu'à 22 px sur un grand
+     écran ; « Grand » et « Très grand » (Réglages) la multiplient par --text-scale. */
+  font-size: calc(var(--text-scale, 1) * clamp(15px, 9px + 0.4vw, 18px));
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: light;
+
+  /* Confort de lecture pour les enfants dys : interlettrage et espacement des mots légèrement
+     élargis, jamais de texte justifié, de majuscules forcées ni d'italique. */
+  letter-spacing: 0.012em;
+  word-spacing: 0.05em;
+}
+
+/* Réglage « Espacement » (Réglages → Affichage) */
+:root[data-spacing='large'] {
+  letter-spacing: 0.05em;
+  word-spacing: 0.16em;
+  line-height: 1.85;
+}
+
+/* Thème crème : fond chaud et texte doux, moins éblouissant que le blanc. */
+:root[data-theme='cream'] {
+  --bg: #f6efdc;
+  --bg-accent: #efe5c9;
+  --surface: #fffaf0;
+  --surface-2: #faf2de;
+  --text: #2a2823;
+  --muted: #55503f;
+  --border: #e2d6b6;
+  --border-strong: #c9bb92;
+  --primary: #3a4bc0;
+  --primary-hover: #2f3fae;
+  --primary-soft: #e8e6f7;
+  --shadow-sm: 0 1px 2px rgb(60 50 20 / 8%);
+  --shadow: 0 1px 2px rgb(60 50 20 / 6%), 0 8px 24px rgb(60 50 20 / 9%);
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #12141b;
+  --bg-accent: #1a1d27;
+  --surface: #1c1f29;
+  --surface-2: #222634;
+  --text: #eceef5;
+  --muted: #a6adc2;
+  --border: #2e3343;
+  --border-strong: #434a5f;
+  --primary: #8e98ff;
+  --primary-hover: #a3abff;
+  --primary-text: #12152e;
+  --primary-soft: #262b4a;
+  --success: #6fd3a0;
+  --success-soft: #173528;
+  --warning: #ffd27a;
+  --warning-soft: #3a2f12;
+  --error: #ffaaa3;
+  --error-soft: #3d1a18;
+  --added-bg: #1b3a27;
+  --removed-bg: #452022;
+  --shadow-sm: none;
+  --shadow: 0 8px 24px rgb(0 0 0 / 25%);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme='auto'] {
+    --bg: #12141b;
+    --bg-accent: #1a1d27;
+    --surface: #1c1f29;
+    --surface-2: #222634;
+    --text: #eceef5;
+    --muted: #a6adc2;
+    --border: #2e3343;
+    --border-strong: #434a5f;
+    --primary: #8e98ff;
+    --primary-hover: #a3abff;
+    --primary-text: #12152e;
+    --primary-soft: #262b4a;
+    --success: #6fd3a0;
+    --success-soft: #173528;
+    --warning: #ffd27a;
+    --warning-soft: #3a2f12;
+    --error: #ffaaa3;
+    --error-soft: #3d1a18;
+    --added-bg: #1b3a27;
+    --removed-bg: #452022;
+    --shadow-sm: none;
+    --shadow: 0 8px 24px rgb(0 0 0 / 25%);
+    color-scheme: dark;
+  }
+}

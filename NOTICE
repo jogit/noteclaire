@@ -1,0 +1,13 @@
+NoteClaire
+Copyright (C) 2026 Jérôme Rabouille
+
+Ce programme est un logiciel libre : vous pouvez le redistribuer et/ou le modifier selon les termes
+de la licence publique générale GNU Affero (AGPL), version 3 uniquement, telle que publiée par la
+Free Software Foundation (identifiant SPDX : AGPL-3.0-only). Le texte complet est dans le fichier
+LICENSE.
+
+Ce programme est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE, sans même la
+garantie implicite de COMMERCIALISATION ou d'ADÉQUATION À UN BUT PARTICULIER.
+
+Les composants tiers (polices, bibliothèques) restent sous leurs propres licences :
+voir THIRD_PARTY_NOTICES.md.
