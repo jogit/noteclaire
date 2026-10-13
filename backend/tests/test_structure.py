@@ -19,7 +19,7 @@ from app.services.ai.fake_provider import FakeProvider
 NOTES = "fonction affine f(x)=ax+b\na c'est le coef directeur"
 
 
-def ok(content: str = "# Fonctions affines\n\nContenu") -> StructureResponse:
+def ok(content: str = "# Fonctions affines\n\n" + NOTES) -> StructureResponse:
     return StructureResponse(StructureResult(clean_course=content), 120, 80)
 
 
@@ -43,7 +43,7 @@ def test_structure_creates_course_and_keeps_notes(
 
     assert response.status_code == 201
     course = response.json()
-    assert course["content_markdown"] == "# Fonctions affines\n\nContenu"
+    assert course["content_markdown"] == "# Fonctions affines\n\n" + NOTES
     assert course["version"] == 1
     assert course["origin"] == "ai_structure"
     assert course["notes_changed"] is False
@@ -61,6 +61,39 @@ def test_structure_creates_course_and_keeps_notes(
     assert (run.status, run.operation, run.provider) == ("success", "structure", "fake")
     assert (run.input_tokens, run.output_tokens) == (120, 80)
     assert len(run.input_hash) == 64
+
+
+LONG_NOTES = (
+    "les vecteurs un vecteur a une direction un sens et une norme deux vecteurs sont egaux "
+    "sils ont meme direction meme sens et meme norme la somme de deux vecteurs se note u+v "
+    "relation de chasles le vecteur nul a une norme nulle coordonnees dun vecteur dans un "
+    "repere orthonormal attention a ne pas confondre point et vecteur exemple le point A de "
+    "coordonnees 1 et 2 puis le point B de coordonnees 4 et 6 donnent le vecteur AB dont la "
+    "longueur vaut cinq unites"
+)
+
+
+def test_unfaithful_course_is_retried_then_refused(
+    client: TestClient, app: FastAPI, fake_provider: FakeProvider, chapter_id: int
+) -> None:
+    client.put(f"/api/chapters/{chapter_id}/notes", json={"raw_text": LONG_NOTES})
+    fake_provider.responses.extend([ok("# Les vecteurs\n\nDes flèches.")] * 2)
+
+    response = client.post(f"/api/chapters/{chapter_id}/structure")
+
+    assert response.status_code == 502
+    assert response.json()["error"]["code"] == "ai_invalid_response"
+    assert client.get(f"/api/chapters/{chapter_id}/course").status_code == 404
+    assert [r.status for r in ai_runs(app)] == ["error", "error"]
+
+
+def test_faithful_course_is_kept(
+    client: TestClient, fake_provider: FakeProvider, chapter_id: int
+) -> None:
+    client.put(f"/api/chapters/{chapter_id}/notes", json={"raw_text": LONG_NOTES})
+    fake_provider.responses.append(ok("# Les vecteurs\n\n" + LONG_NOTES))
+
+    assert client.post(f"/api/chapters/{chapter_id}/structure").status_code == 201
 
 
 def test_each_structure_creates_a_new_version(client: TestClient, with_notes: int) -> None:

@@ -10,9 +10,10 @@ from app.errors import AppError, NotFoundError
 from app.levels import adaptations_text, prompt_label
 from app.models import AISuggestion, Course
 from app.prompts import STRUCTURE_PROMPT_VERSION
-from app.services.ai.base import AIProvider, StructureRequest
+from app.services.ai.base import AIProvider, AIProviderError, StructureRequest, StructureResponse
 from app.services.ai_runs import run_ai
 from app.services.chapter_service import add_note_version, get_chapter
+from app.services.fidelity import keeps_notes
 from app.services.search_service import index_chapter
 
 logger = logging.getLogger(__name__)
@@ -115,10 +116,19 @@ async def structure_chapter(
             chapter.student.adaptation_codes, chapter.student.adaptation_notes
         ),
     )
+
+    async def structure_faithfully() -> StructureResponse:
+        response = await provider.structure_course(request)
+        if not keeps_notes(raw_text, response.result.clean_course):
+            # Cours résumé, réécrit ou complété : même traitement qu'une réponse inutilisable.
+            logger.info("structure chapter=%s unfaithful", chapter_id)
+            raise AIProviderError("ai_invalid_response")
+        return response
+
     response, run = await run_ai(
         db,
         settings,
-        lambda: provider.structure_course(request),
+        structure_faithfully,
         chapter_id=chapter_id,
         operation="structure",
         provider=provider.name,
