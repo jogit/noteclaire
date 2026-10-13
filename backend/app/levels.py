@@ -3,6 +3,8 @@
 L'identifiant est aussi le nom du dossier `data/references/<identifiant>/`.
 """
 
+from app.prompts import escape_data
+
 LEVELS: list[tuple[str, str, str]] = [
     ("seconde", "Seconde", "seconde"),
     ("premiere", "Première générale", "première générale"),
@@ -22,7 +24,11 @@ def prompt_label(level: str) -> str:
 # Particularités proposées : (identifiant, libellé affiché, formulation donnée à l'IA).
 ADAPTATIONS: list[tuple[str, str, str]] = [
     ("dyslexie", "Dyslexie", "dyslexique (phrases courtes, mots simples, texte aéré)"),
-    ("dysorthographie", "Dysorthographie", "dysorthographique (ne pas relever ses fautes)"),
+    (
+        "dysorthographie",
+        "Dysorthographie",
+        "dysorthographique (ne jamais lui signaler ses fautes d'orthographe)",
+    ),
     ("dysgraphie", "Dysgraphie", "dysgraphique (écriture difficile à lire)"),
     ("dyspraxie", "Dyspraxie", "dyspraxique (schémas et cartes mentales simples)"),
     ("dyscalculie", "Dyscalculie", "dyscalculique (calculs expliqués pas à pas)"),
@@ -49,5 +55,5 @@ def adaptations_text(codes: str, free_text: str = "") -> str:
     wanted = {code for code in codes.split(",") if code}
     parts = [phrase for adaptation_id, _, phrase in ADAPTATIONS if adaptation_id in wanted]
     if free_text.strip():
-        parts.append(free_text.strip())
+        parts.append(f"<particularites>{escape_data(free_text.strip())}</particularites>")
     return f"Particularités de l'élève, à respecter : {' ; '.join(parts)}." if parts else ""

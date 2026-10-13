@@ -120,7 +120,7 @@ def test_adaptations_are_sent_to_explanations_only_when_filled(
     text = explain().adaptations
     assert text.startswith("Particularités de l'élève, à respecter : dyspraxique")
     assert "trouble de l'attention" in text
-    assert text.endswith("anxieux.")
+    assert "<particularites>anxieux</particularites>" in text
 
 
 def test_adaptation_list_and_validation(client: TestClient) -> None:

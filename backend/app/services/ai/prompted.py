@@ -2,7 +2,7 @@ from abc import abstractmethod
 
 from pydantic import BaseModel
 
-from app.prompts import render_prompt
+from app.prompts import escape_data, render_prompt
 from app.services.ai.base import (
     AIProvider,
     AIResponse,
@@ -126,8 +126,9 @@ class PromptedProvider(AIProvider):
         if request.remark:
             correction = (
                 "Une première version a déjà été proposée (description JSON ci-dessous). L'élève "
-                f"la trouve imparfaite : « {request.remark} ». Corrige ce point, en gardant le "
-                "reste tel quel, et compare toujours avec l'image de l'élève.\n\n"
+                f"la trouve imparfaite : <remarque>{escape_data(request.remark)}</remarque>. "
+                "Corrige ce point, en gardant le reste tel quel, et compare toujours avec "
+                "l'image de l'élève.\n\n"
                 f"{request.previous_scene}\n\n"
             )
         prompt = render_prompt(
