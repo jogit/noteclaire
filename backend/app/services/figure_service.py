@@ -99,6 +99,15 @@ async def crop_figures(
     except AppError as exc:  # IA indisponible, budget atteint… : on garde le texte seul
         logger.warning("figures chapter=%s error=%s", chapter_id, exc.code)
         return []
+    if len(response.result.boxes) < len(descriptions):
+        # Les schémas sans cadre gardent leur « [schéma : …] » dans le texte : l'élève y ajoutera
+        # la photo lui-même.
+        logger.info(
+            "figures chapter=%s boxes=%s/%s",
+            chapter_id,
+            len(response.result.boxes),
+            len(descriptions),
+        )
     figures: list[CroppedFigure] = []
     for position, box in enumerate(response.result.boxes[: len(descriptions)]):
         if not _valid(box):
