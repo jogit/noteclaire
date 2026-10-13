@@ -33,6 +33,8 @@ flèche commence là où l'élève a commencé à l'écrire.
 Pour te repérer (écriture difficile à lire), voici les notes de l'élève, qui contiennent les mêmes
 mots :
 
+<notes>
 {{ context }}
+</notes>
 
 {{ correction }}

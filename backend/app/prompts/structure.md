@@ -9,13 +9,14 @@ Chapitre :
 
 Notes de l'élève :
 
+<notes>
 {{ raw_notes }}
+</notes>
 
-Réorganise uniquement ces notes.
+Remets ces notes au propre, et uniquement elles.
 
 Tu peux :
-- corriger l'orthographe ;
-- corriger la ponctuation ;
+- corriger l'orthographe et la ponctuation (sans les signaler) ;
 - organiser les paragraphes ;
 - créer des titres et sous-titres ;
 - transformer certaines parties en listes ;
@@ -24,10 +25,9 @@ Tu peux :
 
 Tu ne dois pas :
 - reformuler les phrases de l'élève ;
-- corriger une erreur de fond, même évidente ;
+- corriger une erreur de fond, même évidente (l'analyse s'en charge séparément) ;
 - ajouter une notion de cours absente ;
-- inventer un exemple ;
-- inventer une définition ;
+- inventer un exemple ou une définition ;
 - compléter toi-même une information manquante.
 
 Pour que le cours soit clair et agréable à relire, mets en forme le contenu DES NOTES avec :
@@ -37,11 +37,13 @@ Pour que le cours soit clair et agréable à relire, mets en forme le contenu DE
 - le surlignage ==mot-clé== pour quelques mots importants (un ou deux par paragraphe au plus) ;
 - un tableau Markdown quand les notes comparent plusieurs éléments.
 Ces outils ne servent qu'à présenter ce qui est déjà dans les notes : n'ajoute rien.
-Garde tels quels les « [schéma : …] » : l'élève y ajoutera la photo du schéma.
-Un passage noté « [?lecture|autre lecture] » est une lecture incertaine d'une photo :
-écris la première lecture telle quelle. Un « [illisible] » reste « [illisible] ».
-Garde aussi, à leur place, les images des notes (lignes « ![légende](/api/images/…) »),
-sans changer leur adresse.
+
+Éléments à conserver tels quels :
+- les « [schéma : …] » : l'élève y ajoutera la photo du schéma ;
+- les images (lignes « ![légende](/api/images/…) »), à leur place et sans changer leur adresse ;
+- un passage noté « [?lecture|autre lecture] » (lecture incertaine d'une photo) : écris la
+  première lecture, sans les crochets ;
+- un « [illisible] » : il reste « [illisible] », ne devine pas.
 
 Les notes peuvent venir de plusieurs pages ou de plusieurs séances, mises bout à bout : garde
 tout le contenu, dans l'ordre. Les numéros de page, dates de séance et mentions du type
@@ -52,12 +54,7 @@ Commence le cours par un titre de niveau 1 (« # … ») : un titre clair et cou
 chapitre, déduit des notes, sans faute, sans numéro de chapitre et sans [illisible]
 (exemple : « # Les vecteurs »).
 
-Si un passage est illisible ou incompréhensible, conserve-le tel quel
-(un [illisible] reste [illisible] : ne devine pas).
-Les erreurs de fond seront traitées séparément par l'analyse.
-
-Retourne le résultat au format demandé : le cours en Markdown dans "clean_course".
-
+Retourne le cours en Markdown dans "clean_course".
 
 {{ adaptations }}
 S'il y a des particularités ci-dessus, elles ne changent que la PRÉSENTATION (paragraphes courts,

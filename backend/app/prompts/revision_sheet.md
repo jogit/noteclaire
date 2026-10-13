@@ -5,36 +5,44 @@ CHAPITRE
 {{ chapter }}
 
 COURS VALIDÉ PAR L'ÉLÈVE
+<cours>
 {{ course }}
+</cours>
 
 Rédige la fiche de révision idéale pour un élève de {{ level }}, à partir de ce cours uniquement :
-claire, visuelle, aérée, qu'il aura envie de relire.
+claire, visuelle, aérée mais concise, qu'il aura envie de relire.
+{{ adaptations }}
+S'il y a des particularités ci-dessus, elles ne changent que la présentation (phrases plus
+courtes, texte plus aéré, schémas plus simples), jamais le contenu.
 
 La fiche doit tenir sur le moins de pages possible : pas de répétition (ce qui est déjà dans
 « L'essentiel » ne se recopie pas en entier plus bas), pas d'encadré pour une seule ligne banale.
 
 Règles de fond :
-- aucune balise HTML (jamais de « <br> ») : un retour à la ligne se fait par un nouveau
-  paragraphe, et dans un tableau chaque cellule tient sur une seule ligne ;
-- n'utilise que les informations présentes dans le cours ci-dessus ;
-- n'ajoute aucune notion, définition, date, formule ou exemple absent du cours ;
+- n'utilise que les informations présentes dans le cours ci-dessus : n'ajoute aucune notion,
+  définition, date, formule ou exemple absent du cours ;
 - la fiche reprend le cours : ne crée jamais de section de suggestions, de corrections ou de
-  commentaires sur le cours. Si un point du cours te semble faux, recopie-le tel quel et ajoute
-  juste après une seule ligne « ⚠ À vérifier avec ton professeur », sans donner ta correction ;
+  commentaires sur le cours ;
+- si un point du cours te semble faux, recopie-le tel quel et ajoute juste après une seule ligne
+  « ⚠ À vérifier avec ton professeur », sans donner ta correction ;
 - les doutes de l'élève (« ?? », « pas sûr », « (?) ») et les passages restés incomplets
   (formule ou valeur non terminée, phrase coupée) ne se recopient pas dans la fiche. Regroupe-les
   à la fin dans un seul encadré « ::: attention À vérifier avec ton professeur » : une courte puce
   par point, sans rien compléter toi-même. S'il n'y en a aucun, ne crée pas cet encadré ;
+- aucune balise HTML (jamais de « <br> ») : un retour à la ligne se fait par un nouveau
+  paragraphe, et dans un tableau chaque cellule tient sur une seule ligne ;
 - phrases courtes, listes, ==mots-clés surlignés== (avec parcimonie) ;
 - formules en LaTeX ($...$ ou $$...$$) ; formules chimiques et unités droites :
   $\mathrm{H_2O}$, $\mathrm{Na^+}$, $5\ \mathrm{cm}$.
 
-Mise en forme (dans cet ordre, en omettant ce qui serait vide) :
+Encadré : une ligne « ::: type Titre », le contenu, puis une ligne « ::: ».
+
+Mise en forme (dans cet ordre, en omettant tout ce qui serait vide ou absent du cours) :
 1. un titre « # … » ;
-2. « ::: retenir L'essentiel » : 3 à 5 points clés du chapitre, puis « ::: » — SEULEMENT si le
-   chapitre contient des idées à retenir que la suite de la fiche ne montre pas déjà aussi
-   clairement. Pour une liste de vocabulaire, de définitions, de dates ou de formules, ne le crée
-   pas : le tableau ou les encadrés suffisent. Jamais un point recopié tel quel plus bas ;
+2. « ::: retenir L'essentiel » : 3 à 5 points clés du chapitre, SEULEMENT si le chapitre contient
+   des idées à retenir que la suite de la fiche ne montre pas déjà aussi clairement. Pour une
+   liste de vocabulaire, de définitions, de dates ou de formules, ne le crée pas : le tableau ou
+   les encadrés suffisent. Jamais un point recopié tel quel plus bas ;
 3. une carte mentale (bloc mermaid, syntaxe ci-dessous), SEULEMENT si le chapitre a au moins
    trois parties distinctes et qu'elle montre leurs liens mieux que « L'essentiel ».
    Sinon, n'en mets pas : une carte qui répète la liste au-dessus est du bruit pour l'élève ;
@@ -45,17 +53,14 @@ Mise en forme (dans cet ordre, en omettant ce qui serait vide) :
    cellule vide : un « ⚠ À vérifier avec ton professeur » s'écrit à la fin de la même cellule) ;
 5. « ## Formules et propriétés » : encadrés « ::: propriete … » ;
 6. « ## Méthodes » : encadré « ::: methode … » avec les étapes numérotées, si le cours en donne ;
-7. s'il y a des dates : une frise chronologique (bloc mermaid timeline) ;
-8. un tableau Markdown si le cours compare plusieurs éléments ;
-9. « ::: attention Pièges à éviter » si le cours signale des erreurs fréquentes ;
-10. « ::: exemple » : un exemple tiré du cours.
+7. une frise chronologique (bloc mermaid timeline), s'il y a des dates ;
+8. un tableau Markdown, si le cours compare plusieurs éléments ;
+9. « ::: attention Pièges à éviter », si le cours signale des erreurs fréquentes ;
+10. « ::: exemple », avec un exemple tiré du cours, s'il y en a un.
 
-Encadré : une ligne « ::: type Titre », le contenu, puis une ligne « ::: ».
-
-Carte mentale, si tu en fais une : petite et lisible.
-{{ adaptations }}
-3 à 5 branches, deux niveaux au plus, 1 à 3 mots par nœud ; pas de parenthèses,
-deux-points, guillemets ni formules dans les nœuds ; indentation de deux espaces par niveau :
+Carte mentale, si tu en fais une : petite et lisible. 3 à 5 branches, deux niveaux au plus,
+1 à 3 mots par nœud ; pas de parenthèses, deux-points, guillemets ni formules dans les nœuds ;
+indentation de deux espaces par niveau :
 
 ```mermaid
 mindmap
@@ -65,7 +70,7 @@ mindmap
     Idée 2
 ```
 
-Frise chronologique :
+Frise chronologique : un événement court par date, sans deux-points dans son texte :
 
 ```mermaid
 timeline
