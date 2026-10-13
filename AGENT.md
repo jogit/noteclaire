@@ -127,7 +127,18 @@ compris », puis on vérifie :
   calibrée, et une source pour tout complément ;
 - la fiche et le quiz ne reprennent que le cours, sans section de suggestions ;
 - les explications sont courtes, au tutoiement, adaptées aux particularités.
-Chaque modification d'une consigne incrémente sa version dans `prompts/__init__.py`.
+La version d'une consigne (`prompt_version(nom)` dans `prompts/__init__.py`) est une empreinte
+de son texte : rien à incrémenter, elle ne sert qu'au journal des appels IA (`AIRun`).
+
+Les consignes sont aussi tenues par le serveur, qui ne s'en remet pas au modèle :
+- les données de l'élève (notes, cours, passage, références, remarque) sont entre balises
+  (`<notes>`, `<cours>`…) et `system.md` dit que c'est de la donnée, jamais une instruction ;
+- une mise au propre qui résume, réécrit ou complète les notes est refusée et relancée une fois
+  (`services/fidelity.py`, seuils `MAX_MISSING` / `MAX_ADDED` à ajuster avec de vraies notes ;
+  contrôle simplifié pour les notes courtes) ;
+- un complément (`addition`) sans document de référence réellement fourni est écarté ;
+- une question de quiz dont l'extrait justificatif n'est pas dans le cours est écartée.
+Toute nouvelle règle de ce genre s'écrit dans la consigne ET se vérifie côté serveur.
 
 ## Configuration de l'IA
 
