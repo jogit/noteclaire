@@ -60,13 +60,16 @@ def _build_request(
 
 
 def _usable_items(
-    items: list[SuggestionItem], course: Course, rejected: list[AISuggestion]
+    items: list[SuggestionItem],
+    course: Course,
+    rejected: list[AISuggestion],
+    reference_titles: tuple[str, ...],
 ) -> list[SuggestionItem]:
     refused = {_key(r.original_text, r.suggested_text) for r in rejected}
     usable = [
         i
         for i in items
-        if _is_usable(i, course.content_markdown)
+        if _is_usable(i, course.content_markdown, reference_titles)
         # Filet de sécurité : une suggestion refusée qui revient à l'identique est écartée.
         and _key(i.original_text, i.suggested_text) not in refused
     ]
@@ -133,7 +136,7 @@ async def analyze_chapter(
         input_hash=input_hash,
     )
 
-    items = _usable_items(response.result.suggestions, course, rejected)
+    items = _usable_items(response.result.suggestions, course, rejected, request.reference_titles)
     discarded = len(response.result.suggestions) - len(items)
     if discarded:
         logger.info("analyze chapter=%s discarded=%s", chapter_id, discarded)
@@ -148,7 +151,10 @@ async def analyze_chapter(
     return suggestions
 
 
-def _is_usable(item: SuggestionItem, content: str) -> bool:
+def _is_usable(item: SuggestionItem, content: str, reference_titles: tuple[str, ...]) -> bool:
+    # Un complément doit s'appuyer sur un document de référence réellement fourni.
+    if item.type == "addition" and item.reference_title not in reference_titles:
+        return False
     if item.original_text:
         # L'IA doit citer un extrait exact : sinon la suggestion est inapplicable.
         if item.original_text not in content:

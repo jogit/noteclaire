@@ -3,6 +3,7 @@ from typing import Any
 import pytest
 from fastapi.testclient import TestClient
 
+from app.config import Settings
 from app.services.ai.base import (
     AIProviderError,
     AIResponse,
@@ -12,6 +13,9 @@ from app.services.ai.base import (
 )
 from app.services.ai.fake_provider import FakeProvider
 from tests.conftest import structured
+from tests.test_references import PROGRAMME, sync, write
+
+SOURCE = "Programme de mathématiques de seconde"
 
 COURSE = (
     "# Fonctions affines\n\n"
@@ -49,7 +53,9 @@ def current_course(client: TestClient, chapter_id: int) -> dict[str, Any]:
 
 
 @pytest.fixture
-def chapter(client: TestClient, chapter_id: int) -> int:
+def chapter(client: TestClient, chapter_id: int, settings: Settings) -> int:
+    write(settings, "seconde/mathematiques/programme.md", PROGRAMME)
+    sync(client)
     structured(client, chapter_id, "notes", COURSE)
     return chapter_id
 
@@ -82,7 +88,11 @@ def test_analyze_discards_unusable_suggestions(
         item(original_text="texte absent du cours"),
         item(original_text="", type="correction"),
         item(original_text="b est la pente", suggested_text="b est la pente"),
-        item(original_text="", type="addition", suggested_text="Complément."),
+        item(
+            original_text="", type="addition", suggested_text="Complément.", reference_title=SOURCE
+        ),
+        item(original_text="", type="addition", suggested_text="Sans source."),
+        item(original_text="", type="addition", suggested_text="Source", reference_title="Inventé"),
         item(original_text="", type="warning", suggested_text=""),
         item(confidence=7),
     )
@@ -97,7 +107,9 @@ def test_analyze_discards_unusable_suggestions(
 def test_analyze_keeps_only_the_four_most_important_suggestions(
     client: TestClient, fake_provider: FakeProvider, chapter: int
 ) -> None:
-    addition = item(original_text="", type="addition", suggested_text="Complément.")
+    addition = item(
+        original_text="", type="addition", suggested_text="Complément.", reference_title=SOURCE
+    )
     suggestions = analyze(
         client,
         fake_provider,
@@ -153,7 +165,12 @@ def test_accept_addition_inserts_after_the_line(
         client,
         fake_provider,
         chapter,
-        item(type="addition", original_text="ax + b", suggested_text="Si b = 0, f est linéaire."),
+        item(
+            type="addition",
+            original_text="ax + b",
+            suggested_text="Si b = 0, f est linéaire.",
+            reference_title=SOURCE,
+        ),
     )
     course = client.post(f"/api/suggestions/{suggestion['id']}/accept").json()["course"]
     assert (
@@ -169,7 +186,7 @@ def test_accept_addition_without_anchor_appends(
         client,
         fake_provider,
         chapter,
-        item(type="addition", original_text="", suggested_text="Fin."),
+        item(type="addition", original_text="", suggested_text="Fin.", reference_title=SOURCE),
     )
     course = client.post(f"/api/suggestions/{suggestion['id']}/accept").json()["course"]
     assert course["content_markdown"].endswith("l'origine\n\nFin.\n")

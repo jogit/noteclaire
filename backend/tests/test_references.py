@@ -221,7 +221,7 @@ def test_upload_errors(
     assert not folder.exists() or list(folder.iterdir()) == []
 
 
-def test_analysis_uses_references_and_checks_cited_source(
+def test_analysis_uses_references_and_drops_additions_citing_unknown_source(
     client: TestClient, fake_provider: FakeProvider, settings: Settings, chapter_id: int
 ) -> None:
     write(settings, "seconde/mathematiques/programme.md", PROGRAMME)
@@ -251,10 +251,8 @@ def test_analysis_uses_references_and_checks_cited_source(
     assert isinstance(request, AnalyzeRequest)
     assert "Une fonction linéaire est une fonction affine" in request.reference_context
     assert request.reference_titles == ("Programme de mathématiques de seconde",)
-    assert [s["source_reference"] for s in suggestions] == [
-        "Programme de mathématiques de seconde",
-        "",
-    ]
+    # Le complément qui cite une source inconnue est écarté.
+    assert [s["source_reference"] for s in suggestions] == ["Programme de mathématiques de seconde"]
 
 
 def test_analysis_without_references(

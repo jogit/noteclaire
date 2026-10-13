@@ -106,7 +106,7 @@ def latest_revision_sheet(db: Session, chapter_id: int) -> RevisionSheet:
 
 
 def clean_questions(questions: list[QuizQuestion], course: str) -> list[QuizQuestion]:
-    """Écarte les questions incohérentes ; ne garde un extrait que s'il vient du cours."""
+    """Écarte les questions incohérentes ou sans extrait justificatif tiré du cours."""
     kept: list[QuizQuestion] = []
     for question in questions:
         if not question.question.strip() or not question.answer.strip():
@@ -125,8 +125,9 @@ def clean_questions(questions: list[QuizQuestion], course: str) -> list[QuizQues
             question = question.model_copy(update={"choices": list(TRUE_FALSE), "answer": answer})
         else:
             question = question.model_copy(update={"choices": []})
-        if question.course_excerpt and question.course_excerpt not in course:
-            question = question.model_copy(update={"course_excerpt": ""})
+        excerpt = question.course_excerpt.strip()
+        if not excerpt or excerpt not in course:
+            continue  # extrait absent ou inventé : la question n'est pas vérifiable
         kept.append(question)
     return kept
 

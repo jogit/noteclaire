@@ -44,7 +44,8 @@ def test_clean_questions() -> None:
             question(type="true_false", answer="Peut-être"),
             question(type="short", choices=["inutile"], answer="ax + b"),
             question(question="  "),
-            question(course_excerpt="Phrase inventée."),
+            question(course_excerpt="Phrase inventée."),  # extrait absent du cours : écartée
+            question(course_excerpt="  "),  # extrait vide : écartée
         ],
         COURSE,
     )
@@ -52,11 +53,9 @@ def test_clean_questions() -> None:
         ("qcm", "Le coefficient directeur"),
         ("true_false", "Vrai"),
         ("short", "ax + b"),
-        ("qcm", "Le coefficient directeur"),
     ]
     assert kept[1].choices == ["Vrai", "Faux"]
     assert kept[2].choices == []
-    assert kept[3].course_excerpt == ""
 
 
 def test_revision_sheet_uses_only_current_course(
