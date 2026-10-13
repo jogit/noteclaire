@@ -104,7 +104,7 @@ def test_analyze_discards_unusable_suggestions(
     ]
 
 
-def test_analyze_keeps_only_the_four_most_important_suggestions(
+def test_analyze_keeps_only_the_six_most_important_suggestions(
     client: TestClient, fake_provider: FakeProvider, chapter: int
 ) -> None:
     addition = item(
@@ -119,9 +119,11 @@ def test_analyze_keeps_only_the_four_most_important_suggestions(
         addition,
         item(),
         item(),
+        item(),
+        item(),
         item(original_text="", type="warning", suggested_text=""),
     )
-    assert [s["type"] for s in suggestions] == ["correction", "correction", "warning", "addition"]
+    assert [s["type"] for s in suggestions] == ["correction"] * 4 + ["warning", "addition"]
 
 
 def test_new_analysis_replaces_pending_suggestions(

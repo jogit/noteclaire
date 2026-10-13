@@ -23,9 +23,9 @@ logger = logging.getLogger(__name__)
 
 NO_REFERENCES = "Aucun document de référence n'est disponible pour cette matière."
 
-MAX_SUGGESTIONS = 4
+MAX_SUGGESTIONS = 6
 # Du plus important au moins important.
-PRIORITY = ["correction", "warning", "missing_information", "clarification", "addition"]
+PRIORITY = ["correction", "missing_information", "warning", "clarification", "addition"]
 REPLACING_TYPES = {"correction", "clarification", "missing_information"}
 CONTEXT_CHARS = 40
 
