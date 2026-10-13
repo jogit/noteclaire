@@ -14,6 +14,8 @@ data/*.db-*
 data/secrets/
 .DS_Store
 data/photos/
+# Schémas et images des cours (photos de cahiers découpées) : données d'élèves, jamais versionnées
+data/images/
 # Programmes officiels : téléchargés à la demande (backend/app/data/references_catalog.json)
 data/references/*/
 backups/*
