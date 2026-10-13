@@ -32,7 +32,9 @@ Règles de fond :
   donne le SUJET en gras, puis ce qui est incomplet ou incertain, avec quelques mots du cours
   entre guillemets pour que l'élève retrouve le passage. Exemple :
   « - **Théorème de Pythagore** : la phrase « dans un triangle rectangle… » s'arrête avant la fin. »
-  Pas de puce pour un simple titre inachevé ni pour une ligne vide de sens ; une puce ne commence
+  Une consigne d'activité (« identifier… », « Documents 1 à 3 ») ou une question du cours
+  (« Quels sont… ? ») n'est PAS un passage incomplet : ne la signale pas. Pas de puce pour un
+  simple titre inachevé ni pour une ligne vide de sens ; une puce ne commence
   jamais par « Compléter ». S'il n'y a rien d'utile à signaler, ne crée pas cet encadré ;
 - aucune balise HTML (jamais de « <br> ») : un retour à la ligne se fait par un nouveau
   paragraphe, et dans un tableau chaque cellule tient sur une seule ligne ;
