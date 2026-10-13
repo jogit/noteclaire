@@ -11,7 +11,7 @@ from app.errors import AppError, NotFoundError
 from app.levels import adaptations_text, prompt_label
 from app.models import AISuggestion, Chapter, Course
 from app.models.entities import utcnow
-from app.prompts import ANALYZE_PROMPT_VERSION
+from app.prompts import prompt_version
 from app.services.ai.base import AIProvider, AnalyzeRequest, SuggestionItem
 from app.services.ai_runs import run_ai
 from app.services.chapter_service import get_chapter
@@ -112,7 +112,7 @@ async def analyze_chapter(
     input_hash = sha256(
         "\n".join(
             [
-                ANALYZE_PROMPT_VERSION,
+                prompt_version("analyze"),
                 request.subject,
                 request.level,
                 request.chapter,
@@ -131,7 +131,7 @@ async def analyze_chapter(
         operation="analyze",
         provider=provider.name,
         model=provider.model,
-        prompt_version=ANALYZE_PROMPT_VERSION,
+        prompt_version=prompt_version("analyze"),
         enforce_budget=provider.paid,
         input_hash=input_hash,
     )

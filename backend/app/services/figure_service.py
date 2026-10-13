@@ -17,7 +17,7 @@ from sqlalchemy.orm import Session
 
 from app.config import Settings
 from app.errors import AppError, NotFoundError
-from app.prompts import FIGURES_PROMPT_VERSION, REDRAW_PROMPT_VERSION
+from app.prompts import prompt_version
 from app.services import image_service
 from app.services.ai.base import (
     AIProvider,
@@ -91,8 +91,10 @@ async def crop_figures(
             operation="figures",
             provider=provider.name,
             model=provider.model,
-            prompt_version=FIGURES_PROMPT_VERSION,
-            input_hash=sha256(FIGURES_PROMPT_VERSION + "\n".join(descriptions) + _data_url(jpeg)),
+            prompt_version=prompt_version("figures"),
+            input_hash=sha256(
+                prompt_version("figures") + "\n".join(descriptions) + _data_url(jpeg)
+            ),
             enforce_budget=provider.paid,
         )
         db.commit()
@@ -177,9 +179,9 @@ async def redraw_schema(
         operation="redraw",
         provider=provider.name,
         model=provider.model,
-        prompt_version=REDRAW_PROMPT_VERSION,
+        prompt_version=prompt_version("redraw"),
         input_hash=sha256(
-            REDRAW_PROMPT_VERSION + image_url + notes[:CONTEXT_CHARS] + remark + previous_scene
+            prompt_version("redraw") + image_url + notes[:CONTEXT_CHARS] + remark + previous_scene
         ),
         enforce_budget=provider.paid,
     )

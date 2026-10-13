@@ -21,7 +21,7 @@ from sqlalchemy.orm import Session
 from app.config import Settings
 from app.errors import AppError, NotFoundError
 from app.levels import adaptations_text, prompt_label
-from app.prompts import PHOTO_PROMPT_VERSION
+from app.prompts import prompt_version
 from app.services.ai.base import AIProvider, PhotoRequest, PhotoResult, UncertainSpot
 from app.services.ai_runs import run_ai
 from app.services.chapter_service import get_chapter
@@ -155,9 +155,9 @@ async def transcribe_photo(
         operation="photo",
         provider=provider.name,
         model=provider.model,
-        prompt_version=PHOTO_PROMPT_VERSION,
+        prompt_version=prompt_version("photo"),
         input_hash=sha256(
-            PHOTO_PROMPT_VERSION + request.adaptations + base64.b64encode(jpeg).decode()
+            prompt_version("photo") + request.adaptations + base64.b64encode(jpeg).decode()
         ),
         enforce_budget=provider.paid,
     )

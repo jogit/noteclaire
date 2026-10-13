@@ -1,19 +1,9 @@
+import hashlib
 import re
 from functools import cache
 from pathlib import Path
 
 PROMPTS_DIR = Path(__file__).parent
-
-# À incrémenter à chaque modification d'un prompt (sert à l'audit et au futur cache).
-STRUCTURE_PROMPT_VERSION = "structure-v9"
-ANALYZE_PROMPT_VERSION = "analyze-v6"
-REVISION_SHEET_PROMPT_VERSION = "revision-sheet-v12"
-QUIZ_PROMPT_VERSION = "quiz-v3"
-EXPLAIN_PROMPT_VERSION = "explain-v4"
-PHOTO_PROMPT_VERSION = "photo-v5"
-FIGURES_PROMPT_VERSION = "figures-v1"
-REDRAW_PROMPT_VERSION = "redraw-v7"
-
 
 _VARIABLE = re.compile(r"\{\{ (\w+) \}\}")
 # Balises qui délimitent les données de l'élève dans les prompts (voir system.md).
@@ -38,3 +28,13 @@ def render_prompt(name: str, **values: str) -> str:
     """Remplace les variables {{ nom }}. Les valeurs ne sont pas réinterprétées."""
     safe = {k: v if k in _TRUSTED else escape_data(v) for k, v in values.items()}
     return _VARIABLE.sub(lambda found: safe.get(found.group(1), found.group(0)), load_prompt(name))
+
+
+@cache
+def prompt_version(name: str) -> str:
+    """Empreinte du prompt (et du prompt système) : change d'elle-même dès qu'un texte change.
+
+    Sert à l'audit des appels IA (`AIRun.prompt_version`), sans numéro à incrémenter à la main.
+    """
+    text = load_prompt("system") + load_prompt(name)
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()[:10]

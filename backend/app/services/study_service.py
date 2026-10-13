@@ -10,11 +10,7 @@ from app.config import Settings
 from app.errors import NotFoundError
 from app.levels import adaptations_text, prompt_label
 from app.models import Course, Quiz, RevisionSheet
-from app.prompts import (
-    EXPLAIN_PROMPT_VERSION,
-    QUIZ_PROMPT_VERSION,
-    REVISION_SHEET_PROMPT_VERSION,
-)
+from app.prompts import prompt_version
 from app.services.ai.base import (
     AIProvider,
     AIProviderError,
@@ -77,8 +73,8 @@ async def generate_revision_sheet(
         operation="revision_sheet",
         provider=provider.name,
         model=provider.model,
-        prompt_version=REVISION_SHEET_PROMPT_VERSION,
-        input_hash=_hash(REVISION_SHEET_PROMPT_VERSION, request),
+        prompt_version=prompt_version("revision_sheet"),
+        input_hash=_hash(prompt_version("revision_sheet"), request),
         enforce_budget=provider.paid,
     )
     sheet = RevisionSheet(
@@ -144,8 +140,8 @@ async def generate_quiz(
         operation="quiz",
         provider=provider.name,
         model=provider.model,
-        prompt_version=QUIZ_PROMPT_VERSION,
-        input_hash=_hash(QUIZ_PROMPT_VERSION, request),
+        prompt_version=prompt_version("quiz"),
+        input_hash=_hash(prompt_version("quiz"), request),
         enforce_budget=provider.paid,
     )
     questions = clean_questions(response.result.questions, course.content_markdown)
@@ -193,8 +189,8 @@ async def explain_passage(
         operation="explain",
         provider=provider.name,
         model=provider.model,
-        prompt_version=EXPLAIN_PROMPT_VERSION,
-        input_hash=sha256("\n".join([EXPLAIN_PROMPT_VERSION, mode, request.passage])),
+        prompt_version=prompt_version("explain"),
+        input_hash=sha256("\n".join([prompt_version("explain"), mode, request.passage])),
         enforce_budget=provider.paid,
     )
     db.commit()
