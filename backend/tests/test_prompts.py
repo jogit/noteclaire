@@ -1,8 +1,10 @@
 import asyncio
+from pathlib import Path
 
 import pytest
 from pydantic import BaseModel
 
+from app import prompts
 from app.prompts import render_prompt
 from app.services.ai.base import AIResponse, RedrawRequest
 from app.services.ai.prompted import PromptedProvider
@@ -65,3 +67,18 @@ def test_redraw_remark_is_delimited_and_escaped() -> None:
         asyncio.run(provider.redraw_schema(request))
     assert provider.prompt.count("<remarque>") == 1
     assert provider.prompt.count("</remarque>") == 1
+
+
+def test_prompt_changes_are_picked_up_without_restart(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr(prompts, "PROMPTS_DIR", tmp_path)
+    (tmp_path / "system.md").write_text("système", encoding="utf-8")
+    (tmp_path / "demo.md").write_text("version 1 {{ x }}", encoding="utf-8")
+    before = prompts.prompt_version("demo")
+    assert prompts.render_prompt("demo", x="a") == "version 1 a"
+
+    (tmp_path / "demo.md").write_text("version 2 {{ x }}", encoding="utf-8")
+
+    assert prompts.render_prompt("demo", x="a") == "version 2 a"
+    assert prompts.prompt_version("demo") != before

@@ -1,6 +1,5 @@
 import hashlib
 import re
-from functools import cache
 from pathlib import Path
 
 PROMPTS_DIR = Path(__file__).parent
@@ -19,8 +18,9 @@ def escape_data(text: str) -> str:
     return _DATA_TAG.sub(lambda found: f"&lt;{found.group(1)}{found.group(2)}>", text)
 
 
-@cache
 def load_prompt(name: str) -> str:
+    # Relu à chaque appel (fichiers courts, appel IA de plusieurs secondes) : un prompt modifié
+    # est pris en compte tout de suite, sans redémarrer le serveur.
     return (PROMPTS_DIR / f"{name}.md").read_text(encoding="utf-8")
 
 
@@ -30,7 +30,6 @@ def render_prompt(name: str, **values: str) -> str:
     return _VARIABLE.sub(lambda found: safe.get(found.group(1), found.group(0)), load_prompt(name))
 
 
-@cache
 def prompt_version(name: str) -> str:
     """Empreinte du prompt (et du prompt système) : change d'elle-même dès qu'un texte change.
 

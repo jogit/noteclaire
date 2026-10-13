@@ -9,7 +9,7 @@ install:
 
 dev-backend:
 	cd backend && $(LOCAL_ENV) uv run alembic upgrade head
-	cd backend && $(LOCAL_ENV) uv run uvicorn --factory app.main:create_app --reload --reload-include '*.md' --port 8000
+	cd backend && $(LOCAL_ENV) uv run uvicorn --factory app.main:create_app --reload --port 8000
 
 dev-frontend:
 	cd frontend && npm run dev
